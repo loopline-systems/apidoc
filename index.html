@@ -1,0 +1,1129 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Loopline Systems API</title><link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"><link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"><link rel="stylesheet" href="css/styles.css"></head><body><a href="#top" class="text-muted back-to-top"><i class="fa fa-toggle-up"></i>&nbsp;Back to top</a><div class="container"><div class="row"><div class="col-md-3"><nav id="nav" class="hidden-sm hidden-xs affix nav"><a href="index.html"><img src="img/lls-logo.png" class="logo"></a><div id="static-pages" class="list-group"><a href="index.html" class="list-group-item heading">Loopline Systems API</a><a href="chrome_postman.html" class="list-group-item">Sandboxing with Postman</a><a href="index.html" class="list-group-item">REST API</a></div><div class="list-group"><a data-toggle="collapse" data-target=".collapse.user-menu" href="#page:user" class="list-group-item heading collapsed"><span class="toggle pull-right"><span class="open fa fa-angle-down"></span><span class="closed fa fa-angle-right"></span></span>User</a><div id="page:user-menu" class="collapse user-menu"><a href="#page:user,header:user-user-list" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item resource">User List</a><a data-target="#user-user-list-get" href="#page:user,header:user-user-list-get" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item action"><span class="badge alert-info"><i class="fa fa-arrow-down"></i></span><span class="indent">Get all users</span></a><a data-target="#user-user-list-post" href="#page:user,header:user-user-list-post" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item action"><span class="badge alert-success"><i class="fa fa-plus"></i></span><span class="indent">Create a new user</span></a><a href="#page:user,header:user-user" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item resource">User</a><a data-target="#user-user-get" href="#page:user,header:user-user-get" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item action"><span class="badge alert-info"><i class="fa fa-arrow-down"></i></span><span class="indent">Get a single user</span></a><a data-target="#user-user-patch" href="#page:user,header:user-user-patch" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item action"><span class="badge alert-warning"><i class="fa fa-pencil"></i></span><span class="indent">Update a single user</span></a><a href="#page:user,header:user-supervisee-list" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item resource">Supervisee List</a><a data-target="#user-supervisee-list-get" href="#page:user,header:user-supervisee-list-get" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item action"><span class="badge alert-info"><i class="fa fa-arrow-down"></i></span><span class="indent">Get all supervisees of an user</span></a><a href="#page:user,header:user-supervisor" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item resource">Supervisor</a><a data-target="#user-supervisor-post" href="#page:user,header:user-supervisor-post" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item action"><span class="badge alert-success"><i class="fa fa-plus"></i></span><span class="indent">Assign a supervisor to a user</span></a><a data-target="#user-supervisor-delete" href="#page:user,header:user-supervisor-delete" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item action"><span class="badge alert-danger"><i class="fa fa-times"></i></span><span class="indent">Remove a supervisee from a supervisor</span></a><a href="#page:user,header:user-user-image" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item resource">User Image</a><a data-target="#user-user-image-post" href="#page:user,header:user-user-image-post" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item action"><span class="badge alert-success"><i class="fa fa-plus"></i></span><span class="indent">Update the profile image of an user</span></a><a data-target="#user-user-image-delete" href="#page:user,header:user-user-image-delete" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item action"><span class="badge alert-danger"><i class="fa fa-times"></i></span><span class="indent">Delete the profile image of an user</span></a></div></div><div class="list-group"><a data-toggle="collapse" data-target=".collapse.role-menu" href="#page:role" class="list-group-item heading collapsed"><span class="toggle pull-right"><span class="open fa fa-angle-down"></span><span class="closed fa fa-angle-right"></span></span>Role</a><div id="page:role-menu" class="collapse role-menu"><a href="#page:role,header:role-role-list" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item resource">Role List</a><a data-target="#role-role-list-get" href="#page:role,header:role-role-list-get" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item action"><span class="badge alert-info"><i class="fa fa-arrow-down"></i></span><span class="indent">Get all roles</span></a><a href="#page:role,header:role-role" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item resource">Role</a><a data-target="#role-role-get" href="#page:role,header:role-role-get" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item action"><span class="badge alert-info"><i class="fa fa-arrow-down"></i></span><span class="indent">Get a single role</span></a><a href="#page:role,header:role-role-membership" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item resource">Role Membership</a><a data-target="#role-role-membership-post" href="#page:role,header:role-role-membership-post" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item action"><span class="badge alert-success"><i class="fa fa-plus"></i></span><span class="indent">Add a role to a user</span></a><a data-target="#role-role-membership-delete" href="#page:role,header:role-role-membership-delete" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item action"><span class="badge alert-danger"><i class="fa fa-times"></i></span><span class="indent">Remove a role from a user</span></a></div></div><div class="list-group"><a data-toggle="collapse" data-target=".collapse.team-menu" href="#page:team" class="list-group-item heading collapsed"><span class="toggle pull-right"><span class="open fa fa-angle-down"></span><span class="closed fa fa-angle-right"></span></span>Team</a><div id="page:team-menu" class="collapse team-menu"><a href="#page:team,header:team-team-list" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item resource">Team List</a><a data-target="#team-team-list-get" href="#page:team,header:team-team-list-get" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item action"><span class="badge alert-info"><i class="fa fa-arrow-down"></i></span><span class="indent">Get all teams</span></a><a data-target="#team-team-list-post" href="#page:team,header:team-team-list-post" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item action"><span class="badge alert-success"><i class="fa fa-plus"></i></span><span class="indent">Create a new team</span></a><a href="#page:team,header:team-team" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item resource">Team</a><a data-target="#team-team-get" href="#page:team,header:team-team-get" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item action"><span class="badge alert-info"><i class="fa fa-arrow-down"></i></span><span class="indent">Get a single team</span></a><a data-target="#team-team-patch" href="#page:team,header:team-team-patch" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item action"><span class="badge alert-warning"><i class="fa fa-pencil"></i></span><span class="indent">Update a single team</span></a><a data-target="#team-team-delete" href="#page:team,header:team-team-delete" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item action"><span class="badge alert-danger"><i class="fa fa-times"></i></span><span class="indent">Delete a single team</span></a><a href="#page:team,header:team-teamlead" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item resource">Teamlead</a><a data-target="#team-teamlead-post" href="#page:team,header:team-teamlead-post" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item action"><span class="badge alert-success"><i class="fa fa-plus"></i></span><span class="indent">Set a new teamlead</span></a><a href="#page:team,header:team-team-membership" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item resource">Team Membership</a><a data-target="#team-team-membership-post" href="#page:team,header:team-team-membership-post" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item action"><span class="badge alert-success"><i class="fa fa-plus"></i></span><span class="indent">Add a user to a team</span></a><a data-target="#team-team-membership-delete" href="#page:team,header:team-team-membership-delete" style="border-top-left-radius: 0; border-top-right-radius: 0" class="list-group-item action"><span class="badge alert-danger"><i class="fa fa-times"></i></span><span class="indent">Delete a user from a team</span></a></div></div></nav></div><div id="content" class="col-md-8"><div data-bind="visible: page() == 'home'"><header><div class="page-header"><h1 id="top">Loopline Systems API</h1></div></header><div class="description"><h2>Getting Started</h2>
+<p>Loopline Systems provides a <a href="http://en.wikipedia.org/wiki/Representational_state_transfer">RESTful API</a> where you can do actions and receive information for your own integrations.</p>
+<p>You can find the available actions in the side bar. Feel free to create teams, update users and more from your own written client software.</p>
+<p>Your opinion is important! If you have any suggestions how we can improve our API to fit better to your needs, just feel free to <a href="mailto:trial@loopline-systems.com">contact us</a>.</p>
+<h3>Usage</h3>
+<p>For using the API, you need a client id and an API key which you can receive both in your admin section.</p>
+<p>All data is sent and received as json.</p>
+<h3>Error handling</h3>
+<p>If errors occur while communicating with the API you will receive an error, including the HTTP status-code and a message.</p>
+<h3>Sandbox</h3>
+<p>Loopline Systems supports the Postman extension for Chrome with a request collection you can easily import. If you are not familiar with it, just have a look at our <a href="chrome_postman.html">tutorial</a>.</p>
+<p>TEST</p>
+</div><a href="#page:user" class="btn btn-default pull-right">Next&nbsp;<i class="fa fa-arrow-circle-right"></i></a><div class="clearfix"></div><hr/></div><div data-bind="visible: page() == 'user', style: {marginTop: page() == 'user' ? '38px' : ''}"><div class="panel panel-default"><div class="panel-heading"><h3 id="user">User&nbsp;<a href="#page:user"><i class="fa fa-link"></i></a></h3></div><div class="panel-body"><h4 id="user-user-list">User List&nbsp;<a href="#page:user,header:user-user-list"><i class="fa fa-link"></i></a></h4><section id="user-user-list-get" class="panel panel-info"><div data-toggle="collapse" data-target="#user-user-list-get .content-group" class="panel-heading"><div style="float:right"><span>Get all users</span></div><div style="float:left"><a href="#page:user,header:user-user-list-get" class="btn btn-xs btn-primary">GET</a></div><div style="overflow:hidden"><code>/users</code></div></div><div class="panel content-group collapse"><div class="panel-body"><p>Get all users</p>
+</div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>page</dt><dd><code>integer (\d+)</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-info default"><strong>Default:&nbsp;</strong><span>1</span></span>&nbsp;<p>page number to display</p>
+</dd><dt>maxresults</dt><dd><code>integer (\d+)</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-info default"><strong>Default:&nbsp;</strong><span>25</span></span>&nbsp;<p>results per page to display</p>
+</dd><dt>search</dt><dd><code>string (\s+)</code>&nbsp;<span>(optional)</span>&nbsp;<p>search term (OR)</p>
+</dd><dt>filter</dt><dd><code>string (\s+)</code>&nbsp;<span>(optional)</span>&nbsp;<p>filter type</p>
+</dd><dt>sort</dt><dd><code>string (\s+)</code>&nbsp;<span>(optional)</span>&nbsp;<p>property to sort by</p>
+</dd><dt>sortOrder</dt><dd><code>string (\s+)</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-info default"><strong>Default:&nbsp;</strong><span>ASC</span></span>&nbsp;<p>sort order (ASC|DESC)</p>
+</dd><dt>excludeIds</dt><dd><code>string (\s+)</code>&nbsp;<span>(optional)</span>&nbsp;<p>comma separated list of IDs to exclude</p>
+</dd><dt>deactivated</dt><dd><code>string (\s+)</code>&nbsp;<span>(optional)</span>&nbsp;<p>whether to include deactivated users</p>
+</dd></dl></li></ul><ul class="list-group"><li data-toggle="collapse" data-target="#2541b70abfacde51e093f02212b849d8" role="requestTrigger" class="list-group-item collapsed"><strong>Request</strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="2541b70abfacde51e093f02212b849d8" role="request" class="list-group-item panel-collapse collapse"><h5>Headers</h5><pre><code><span class="hljs-attribute">X-Api-Client</span>: <span class="hljs-string">&lt;CLIENT_ID&gt;</span><br/><span class="hljs-attribute">X-Api-Key</span>: <span class="hljs-string">&lt;API_KEY&gt;</span><br/></code></pre><div class="description"><p>Example:</p>
+<pre><code class="language-bash">curl https://&lt;your_loopline_systems_domain&gt;/users -X GET \
+-H <span class="hljs-string">"X-Api-Client: &lt;CLIENT_ID&gt;"</span> \
+-H <span class="hljs-string">"X-Api-Key: &lt;API_KEY&gt;"</span>
+</code></pre>
+</div></li><li data-toggle="collapse" data-target="#caf86399ff529763e35f0b3b6ba2403c" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="caf86399ff529763e35f0b3b6ba2403c" role="response" class="list-group-item panel-collapse collapse"><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">sort</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"firstname"</span></span>,
+    "<span class="hljs-attribute">order</span>": <span class="hljs-value"><span class="hljs-string">"ASC"</span>
+  </span>}</span>,
+  "<span class="hljs-attribute">filter</span>": <span class="hljs-value">[
+
+  ]</span>,
+  "<span class="hljs-attribute">pagination</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">count</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
+    "<span class="hljs-attribute">currentPage</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+    "<span class="hljs-attribute">maxPerPage</span>": <span class="hljs-value"><span class="hljs-number">25</span></span>,
+    "<span class="hljs-attribute">hasNextPage</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+    "<span class="hljs-attribute">hasPreviousPage</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+    "<span class="hljs-attribute">haveToPaginate</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+    "<span class="hljs-attribute">getCurrentPageOffsetEnd</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
+    "<span class="hljs-attribute">getCurrentPageOffsetStart</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+    "<span class="hljs-attribute">getNbPages</span>": <span class="hljs-value"><span class="hljs-number">1</span>
+  </span>}</span>,
+  "<span class="hljs-attribute">results</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">18</span></span>,
+      "<span class="hljs-attribute">username</span>": <span class="hljs-value"><span class="hljs-string">"demo+Alex.Millner@loopline-systems.com"</span></span>,
+      "<span class="hljs-attribute">firstname</span>": <span class="hljs-value"><span class="hljs-string">"Alex"</span></span>,
+      "<span class="hljs-attribute">lastname</span>": <span class="hljs-value"><span class="hljs-string">"Millner"</span></span>,
+      "<span class="hljs-attribute">image</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">18</span></span>,
+        "<span class="hljs-attribute">webPath</span>": <span class="hljs-value"><span class="hljs-string">"http://static.helen.dev/tal-lon-cdn/69731449a4c782b76d43d9b83c9f07de.jpeg"</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"demo+Alex.Millner@loopline-systems.com"</span></span>,
+      "<span class="hljs-attribute">position</span>": <span class="hljs-value"><span class="hljs-string">"Customer Success Agent"</span></span>,
+      "<span class="hljs-attribute">roles</span>": <span class="hljs-value">[
+        {
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+          "<span class="hljs-attribute">role</span>": <span class="hljs-value"><span class="hljs-string">"ROLE_USER"</span></span>,
+          "<span class="hljs-attribute">toggleable</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
+        </span>},
+        {
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">6</span></span>,
+          "<span class="hljs-attribute">role</span>": <span class="hljs-value"><span class="hljs-string">"ROLE_USER_ACCEPTED_TOS"</span></span>,
+          "<span class="hljs-attribute">toggleable</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+        </span>}
+      ]</span>,
+      "<span class="hljs-attribute">supervisor</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">16</span></span>,
+        "<span class="hljs-attribute">username</span>": <span class="hljs-value"><span class="hljs-string">"demo+Paul.Newman@loopline-systems.com"</span></span>,
+        "<span class="hljs-attribute">firstname</span>": <span class="hljs-value"><span class="hljs-string">"Paul"</span></span>,
+        "<span class="hljs-attribute">lastname</span>": <span class="hljs-value"><span class="hljs-string">"Newman"</span></span>,
+        "<span class="hljs-attribute">image</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">16</span></span>,
+          "<span class="hljs-attribute">webPath</span>": <span class="hljs-value"><span class="hljs-string">"http://static.helen.dev/tal-lon-cdn/fc14943abea097f70690de081821f245.jpeg"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"demo+Paul.Newman@loopline-systems.com"</span></span>,
+        "<span class="hljs-attribute">position</span>": <span class="hljs-value"><span class="hljs-string">"Sales Agent"</span></span>,
+        "<span class="hljs-attribute">roles</span>": <span class="hljs-value">[
+
+        ]</span>,
+        "<span class="hljs-attribute">supervisor</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">5</span></span>,
+          "<span class="hljs-attribute">username</span>": <span class="hljs-value"><span class="hljs-string">"demo+Graig.Greening@loopline-systems.com"</span></span>,
+          "<span class="hljs-attribute">firstname</span>": <span class="hljs-value"><span class="hljs-string">"Graig"</span></span>,
+          "<span class="hljs-attribute">lastname</span>": <span class="hljs-value"><span class="hljs-string">"Greening"</span></span>,
+          "<span class="hljs-attribute">image</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+          "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"demo+Graig.Greening@loopline-systems.com"</span></span>,
+          "<span class="hljs-attribute">position</span>": <span class="hljs-value"><span class="hljs-string">"Head of Sales"</span></span>,
+          "<span class="hljs-attribute">roles</span>": <span class="hljs-value">[
+
+          ]</span>,
+          "<span class="hljs-attribute">supervisor</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+          "<span class="hljs-attribute">active</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+          "<span class="hljs-attribute">acceptedTOS</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+          "<span class="hljs-attribute">activatedAt</span>": <span class="hljs-value"><span class="hljs-string">"18-06-2015"</span></span>,
+          "<span class="hljs-attribute">deactivatedAt</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+          "<span class="hljs-attribute">lastPasswordResetByAdmin</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">active</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+        "<span class="hljs-attribute">acceptedTOS</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+        "<span class="hljs-attribute">activatedAt</span>": <span class="hljs-value"><span class="hljs-string">"18-06-2015"</span></span>,
+        "<span class="hljs-attribute">deactivatedAt</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">lastPasswordResetByAdmin</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">active</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+      "<span class="hljs-attribute">acceptedTOS</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+      "<span class="hljs-attribute">activatedAt</span>": <span class="hljs-value"><span class="hljs-string">"18-06-2015"</span></span>,
+      "<span class="hljs-attribute">deactivatedAt</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">lastPasswordResetByAdmin</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">10</span></span>,
+      "<span class="hljs-attribute">username</span>": <span class="hljs-value"><span class="hljs-string">"demo+Anton.Mozart@loopline-systems.com"</span></span>,
+      "<span class="hljs-attribute">firstname</span>": <span class="hljs-value"><span class="hljs-string">"Anton"</span></span>,
+      "<span class="hljs-attribute">lastname</span>": <span class="hljs-value"><span class="hljs-string">"Mozart"</span></span>,
+      "<span class="hljs-attribute">image</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">10</span></span>,
+        "<span class="hljs-attribute">webPath</span>": <span class="hljs-value"><span class="hljs-string">"http://static.helen.dev/tal-lon-cdn/d337d1606222162034fbf29c641d7672.jpeg"</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"demo+Anton.Mozart@loopline-systems.com"</span></span>,
+      "<span class="hljs-attribute">position</span>": <span class="hljs-value"><span class="hljs-string">"Senior Ruby Developer"</span></span>,
+      "<span class="hljs-attribute">roles</span>": <span class="hljs-value">[
+        {
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+          "<span class="hljs-attribute">role</span>": <span class="hljs-value"><span class="hljs-string">"ROLE_USER"</span></span>,
+          "<span class="hljs-attribute">toggleable</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
+        </span>},
+        {
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
+          "<span class="hljs-attribute">role</span>": <span class="hljs-value"><span class="hljs-string">"ROLE_SUPERVISOR"</span></span>,
+          "<span class="hljs-attribute">toggleable</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+        </span>},
+        {
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">6</span></span>,
+          "<span class="hljs-attribute">role</span>": <span class="hljs-value"><span class="hljs-string">"ROLE_USER_ACCEPTED_TOS"</span></span>,
+          "<span class="hljs-attribute">toggleable</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+        </span>},
+        {
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">7</span></span>,
+          "<span class="hljs-attribute">role</span>": <span class="hljs-value"><span class="hljs-string">"ROLE_CAN_BE_SUPERVISOR"</span></span>,
+          "<span class="hljs-attribute">toggleable</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
+        </span>}
+      ]</span>,
+      "<span class="hljs-attribute">supervisor</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">4</span></span>,
+        "<span class="hljs-attribute">username</span>": <span class="hljs-value"><span class="hljs-string">"demo+Lucas.Mancini@loopline-systems.com"</span></span>,
+        "<span class="hljs-attribute">firstname</span>": <span class="hljs-value"><span class="hljs-string">"Lucas"</span></span>,
+        "<span class="hljs-attribute">lastname</span>": <span class="hljs-value"><span class="hljs-string">"Mancini"</span></span>,
+        "<span class="hljs-attribute">image</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">4</span></span>,
+          "<span class="hljs-attribute">webPath</span>": <span class="hljs-value"><span class="hljs-string">"http://static.helen.dev/tal-lon-cdn/dbed81c3cf1c2c4c0d1ec79d624e3259.jpeg"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"demo+Lucas.Mancini@loopline-systems.com"</span></span>,
+        "<span class="hljs-attribute">position</span>": <span class="hljs-value"><span class="hljs-string">"CTO"</span></span>,
+        "<span class="hljs-attribute">roles</span>": <span class="hljs-value">[
+
+        ]</span>,
+        "<span class="hljs-attribute">supervisor</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">3</span></span>,
+          "<span class="hljs-attribute">username</span>": <span class="hljs-value"><span class="hljs-string">"catrina@loopline-systems.com"</span></span>,
+          "<span class="hljs-attribute">firstname</span>": <span class="hljs-value"><span class="hljs-string">"Catrina"</span></span>,
+          "<span class="hljs-attribute">lastname</span>": <span class="hljs-value"><span class="hljs-string">"Carnahan"</span></span>,
+          "<span class="hljs-attribute">image</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+          "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"catrina@loopline-systems.com"</span></span>,
+          "<span class="hljs-attribute">position</span>": <span class="hljs-value"><span class="hljs-string">"CFO"</span></span>,
+          "<span class="hljs-attribute">roles</span>": <span class="hljs-value">[
+
+          ]</span>,
+          "<span class="hljs-attribute">supervisor</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+          "<span class="hljs-attribute">active</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+          "<span class="hljs-attribute">acceptedTOS</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+          "<span class="hljs-attribute">activatedAt</span>": <span class="hljs-value"><span class="hljs-string">"18-06-2015"</span></span>,
+          "<span class="hljs-attribute">deactivatedAt</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+          "<span class="hljs-attribute">lastPasswordResetByAdmin</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">active</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+        "<span class="hljs-attribute">acceptedTOS</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+        "<span class="hljs-attribute">activatedAt</span>": <span class="hljs-value"><span class="hljs-string">"18-06-2015"</span></span>,
+        "<span class="hljs-attribute">deactivatedAt</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">lastPasswordResetByAdmin</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">active</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+      "<span class="hljs-attribute">acceptedTOS</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+      "<span class="hljs-attribute">activatedAt</span>": <span class="hljs-value"><span class="hljs-string">"18-06-2015"</span></span>,
+      "<span class="hljs-attribute">deactivatedAt</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">lastPasswordResetByAdmin</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+    </span>}
+  ]
+</span>}
+</code></pre><div class="description"><p>Returned when successful</p>
+</div></li><li data-toggle="collapse" data-target="#f14fb794e63150305edebce3c2593026" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>401</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="f14fb794e63150305edebce3c2593026" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when not authorized</p>
+</div></li></ul></div></section><section id="user-user-list-post" class="panel panel-success"><div data-toggle="collapse" data-target="#user-user-list-post .content-group" class="panel-heading"><div style="float:right"><span>Create a new user</span></div><div style="float:left"><a href="#page:user,header:user-user-list-post" class="btn btn-xs btn-success">POST</a></div><div style="overflow:hidden"><code>/users</code></div></div><div class="panel content-group collapse"><div class="panel-body"><p>Create a new user</p>
+</div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>email</dt><dd><code>string (\s+)</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>The email of the user</p>
+</dd><dt>locale</dt><dd><code>string (\s+)</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>The locale of the user</p>
+</dd><dt>firstname</dt><dd><code>string (\s+)</code>&nbsp;<span>(optional)</span>&nbsp;<p>The firstname of the user</p>
+</dd><dt>lastname</dt><dd><code>string (\s+)</code>&nbsp;<span>(optional)</span>&nbsp;<p>The lastname of the user</p>
+</dd></dl></li></ul><ul class="list-group"><li data-toggle="collapse" data-target="#d37a56a5951909a1fc82ac8da1949e26" role="requestTrigger" class="list-group-item collapsed"><strong>Request</strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="d37a56a5951909a1fc82ac8da1949e26" role="request" class="list-group-item panel-collapse collapse"><h5>Headers</h5><pre><code><span class="hljs-attribute">X-Api-Client</span>: <span class="hljs-string">&lt;CLIENT_ID&gt;</span><br/><span class="hljs-attribute">X-Api-Key</span>: <span class="hljs-string">&lt;API_KEY&gt;</span><br/><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br/></code></pre><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">firstname</span>": <span class="hljs-value"><span class="hljs-string">"Susann"</span></span>,
+  "<span class="hljs-attribute">lastname</span>": <span class="hljs-value"><span class="hljs-string">"Riley"</span></span>,
+  "<span class="hljs-attribute">email</span>":<span class="hljs-value"><span class="hljs-string">"susann@loopline-systems.com"</span></span>,
+  "<span class="hljs-attribute">locale</span>": <span class="hljs-value"><span class="hljs-string">"de_DE"</span>
+</span>}
+</code></pre><div class="description"><p>Example:</p>
+<pre><code class="language-bash">curl https://&lt;your_loopline_systems_domain&gt;/users -X POST \
+-H <span class="hljs-string">"X-Api-Client: &lt;CLIENT_ID&gt;"</span> \
+-H <span class="hljs-string">"X-Api-Key: &lt;API_KEY&gt;"</span> \
+-H <span class="hljs-string">"Content-Type: application/json"</span> \
+<span class="hljs-operator">-d</span> <span class="hljs-string">'{
+"firstname": "Susann",
+"lastname": "Riley",
+"email":"susann@loopline-systems.com",
+"locale": "de_DE"
+}'</span>
+</code></pre>
+</div></li><li data-toggle="collapse" data-target="#6499d07127efa2edfa59fce40d3dc5f5" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>201</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="6499d07127efa2edfa59fce40d3dc5f5" role="response" class="list-group-item panel-collapse collapse"><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">21</span></span>,
+  "<span class="hljs-attribute">username</span>": <span class="hljs-value"><span class="hljs-string">"susann@loopline-systems.com"</span></span>,
+  "<span class="hljs-attribute">firstname</span>": <span class="hljs-value"><span class="hljs-string">"Susann"</span></span>,
+  "<span class="hljs-attribute">lastname</span>": <span class="hljs-value"><span class="hljs-string">"Riley"</span></span>,
+  "<span class="hljs-attribute">image</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">webPath</span>": <span class="hljs-value"><span class="hljs-string">"https://ec3660afbaec0812cdb5-83af784216914eb78a3907e564e823b0.ssl.cf3.rackcdn.com/default_user.png"</span>
+  </span>}</span>,
+  "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"susann@loopline-systems.com"</span></span>,
+  "<span class="hljs-attribute">position</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+  "<span class="hljs-attribute">active</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+  "<span class="hljs-attribute">activatedAt</span>": <span class="hljs-value"><span class="hljs-string">"12-06-2015"</span></span>,
+  "<span class="hljs-attribute">confirmationToken</span>": <span class="hljs-value"><span class="hljs-string">"87e4c3e4af9d04d5d2f5631ec06ac16ca5091ac7"</span></span>,
+  "<span class="hljs-attribute">deactivatedAt</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+  "<span class="hljs-attribute">lastPasswordResetByAdmin</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+</span>}
+</code></pre><div class="description"><p>Returned when created</p>
+</div></li><li data-toggle="collapse" data-target="#3fb72489e5f80ea9ec7ed196445adb56" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>400</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="3fb72489e5f80ea9ec7ed196445adb56" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when the request content is malformed</p>
+</div></li><li data-toggle="collapse" data-target="#9b99912bbf995872e0cf158527180975" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>401</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="9b99912bbf995872e0cf158527180975" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when not authorized</p>
+</div></li><li data-toggle="collapse" data-target="#f0224005aa86d6f190f4047e10c3e9a6" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>404</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="f0224005aa86d6f190f4047e10c3e9a6" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when not found</p>
+</div></li><li data-toggle="collapse" data-target="#a6d80b9d3a889b7427bf29baa13c8012" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>409</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="a6d80b9d3a889b7427bf29baa13c8012" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when organization initialSetup not done</p>
+</div></li></ul></div></section><h4 id="user-user">User&nbsp;<a href="#page:user,header:user-user"><i class="fa fa-link"></i></a></h4><section id="user-user-get" class="panel panel-info"><div data-toggle="collapse" data-target="#user-user-get .content-group" class="panel-heading"><div style="float:right"><span>Get a single user</span></div><div style="float:left"><a href="#page:user,header:user-user-get" class="btn btn-xs btn-primary">GET</a></div><div style="overflow:hidden"><code>/users/{id}</code></div></div><div class="panel content-group collapse"><div class="panel-body"><p>Get a single user</p>
+</div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>id</dt><dd><code>integer (\d+)</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>The id of the user</p>
+</dd><dt>extend</dt><dd><code>integer (\d+)</code>&nbsp;<span>(optional)</span>&nbsp;<p>Extends the response data</p>
+<p><strong>Choices:&nbsp;</strong><code>1</code> </p></dd></dl></li></ul><ul class="list-group"><li data-toggle="collapse" data-target="#79cc136a2b9537f658806975ee06513c" role="requestTrigger" class="list-group-item collapsed"><strong>Request</strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="79cc136a2b9537f658806975ee06513c" role="request" class="list-group-item panel-collapse collapse"><h5>Headers</h5><pre><code><span class="hljs-attribute">X-Api-Client</span>: <span class="hljs-string">&lt;CLIENT_ID&gt;</span><br/><span class="hljs-attribute">X-Api-Key</span>: <span class="hljs-string">&lt;API_KEY&gt;</span><br/></code></pre><div class="description"><p>Example:</p>
+<pre><code class="language-bash">curl https://&lt;your_loopline_systems_domain&gt;/users/&lt;id&gt; -X GET \
+-H <span class="hljs-string">"X-Api-Client: &lt;CLIENT_ID&gt;"</span> \
+-H <span class="hljs-string">"X-Api-Key: &lt;API_KEY&gt;"</span>
+</code></pre>
+</div></li><li data-toggle="collapse" data-target="#6f5d0b531004a0b2ba11dbdfdd7f34f9" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="6f5d0b531004a0b2ba11dbdfdd7f34f9" role="response" class="list-group-item panel-collapse collapse"><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
+  "<span class="hljs-attribute">username</span>": <span class="hljs-value"><span class="hljs-string">"susann@loopline-systems.com"</span></span>,
+  "<span class="hljs-attribute">firstname</span>": <span class="hljs-value"><span class="hljs-string">"Susann"</span></span>,
+  "<span class="hljs-attribute">lastname</span>": <span class="hljs-value"><span class="hljs-string">"Riley"</span></span>,
+  "<span class="hljs-attribute">image</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">webPath</span>": <span class="hljs-value"><span class="hljs-string">"http://static.helen.dev/tal-lon-cdn/"</span>
+  </span>}</span>,
+  "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"susann@loopline-systems.com"</span></span>,
+  "<span class="hljs-attribute">position</span>": <span class="hljs-value"><span class="hljs-string">"CEO"</span></span>,
+  "<span class="hljs-attribute">roles</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+      "<span class="hljs-attribute">role</span>": <span class="hljs-value"><span class="hljs-string">"ROLE_USER"</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Active user"</span></span>,
+      "<span class="hljs-attribute">toggleable</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
+    </span>}
+  ]</span>,
+  "<span class="hljs-attribute">supervisor</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
+    "<span class="hljs-attribute">username</span>": <span class="hljs-value"><span class="hljs-string">"christian.miller@loopline-systems.com"</span></span>,
+    "<span class="hljs-attribute">firstname</span>": <span class="hljs-value"><span class="hljs-string">"Christian"</span></span>,
+    "<span class="hljs-attribute">lastname</span>": <span class="hljs-value"><span class="hljs-string">"Miller"</span></span>,
+    "<span class="hljs-attribute">image</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+      "<span class="hljs-attribute">webPath</span>": <span class="hljs-value"><span class="hljs-string">"http://static.helen.dev/tal-lon-cdn/christian.miller.jpg"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"christian.miller@loopline-systems.com"</span></span>,
+    "<span class="hljs-attribute">position</span>": <span class="hljs-value"><span class="hljs-string">"CEO"</span></span>,
+    "<span class="hljs-attribute">roles</span>": <span class="hljs-value">[]</span>,
+    "<span class="hljs-attribute">supervisor</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">recommendable</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">teams</span>": <span class="hljs-value">[]</span>,
+    "<span class="hljs-attribute">active</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+    "<span class="hljs-attribute">acceptedTOS</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+    "<span class="hljs-attribute">activatedAt</span>": <span class="hljs-value"><span class="hljs-string">"08-06-2015"</span></span>,
+    "<span class="hljs-attribute">deactivatedAt</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">lastPasswordResetByAdmin</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+  </span>}</span>,
+  "<span class="hljs-attribute">recommendable</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+  "<span class="hljs-attribute">teams</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"HR"</span></span>,
+      "<span class="hljs-attribute">isLead</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+      "<span class="hljs-attribute">size</span>": <span class="hljs-value"><span class="hljs-number">1</span>
+    </span>}
+  ]</span>,
+  "<span class="hljs-attribute">active</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+  "<span class="hljs-attribute">acceptedTOS</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+  "<span class="hljs-attribute">activatedAt</span>": <span class="hljs-value"><span class="hljs-string">"08-06-2015"</span></span>,
+  "<span class="hljs-attribute">deactivatedAt</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+  "<span class="hljs-attribute">lastPasswordResetByAdmin</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+</span>}
+</code></pre><div class="description"><p>Returned when successful</p>
+</div></li><li data-toggle="collapse" data-target="#8ebce354732902d20059a913956b1255" role="requestTrigger" class="list-group-item collapsed"><strong>Request</strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="8ebce354732902d20059a913956b1255" role="request" class="list-group-item panel-collapse collapse"><h5>Headers</h5><pre><code><span class="hljs-attribute">X-Api-Client</span>: <span class="hljs-string">&lt;CLIENT_ID&gt;</span><br/><span class="hljs-attribute">X-Api-Key</span>: <span class="hljs-string">&lt;API_KEY&gt;</span><br/></code></pre><div class="description"><p>Example:</p>
+<pre><code class="language-bash">curl /users/{id}?extend=<span class="hljs-number">1</span> -X GET \
+-H <span class="hljs-string">"X-Api-Client: &lt;CLIENT_ID&gt;"</span> \
+-H <span class="hljs-string">"X-Api-Key: &lt;API_KEY&gt;"</span>
+</code></pre>
+</div></li><li data-toggle="collapse" data-target="#719ebf16ff1a9241577578aee7a43e8a" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="719ebf16ff1a9241577578aee7a43e8a" role="response" class="list-group-item panel-collapse collapse"><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
+  "<span class="hljs-attribute">username</span>": <span class="hljs-value"><span class="hljs-string">"susann@loopline-systems.com"</span></span>,
+  "<span class="hljs-attribute">firstname</span>": <span class="hljs-value"><span class="hljs-string">"Susann"</span></span>,
+  "<span class="hljs-attribute">lastname</span>": <span class="hljs-value"><span class="hljs-string">"Riley"</span></span>,
+  "<span class="hljs-attribute">image</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">40</span></span>,
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"7566f0404037cede5bb3d742194d28c2.jpeg"</span></span>,
+    "<span class="hljs-attribute">webPath</span>": <span class="hljs-value"><span class="hljs-string">"http://static.helen.dev/tal-lon-cdn/7566f0404037cede5bb3d742194d28c2.jpeg"</span>
+  </span>}</span>,
+  "<span class="hljs-attribute">organization</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Loopline Systems GmbH"</span></span>,
+    "<span class="hljs-attribute">logo</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"d47965e73e19a1ef8b5eeb0f2318a982.png"</span></span>,
+      "<span class="hljs-attribute">webPath</span>": <span class="hljs-value"><span class="hljs-string">"http://static.helen.dev/tal-lon-cdn/d47965e73e19a1ef8b5eeb0f2318a982.png"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">systemEmail</span>": <span class="hljs-value"><span class="hljs-string">"demo+organization@loopline-systems.com"</span></span>,
+    "<span class="hljs-attribute">globalFeedbackPeriodDuration</span>": <span class="hljs-value"><span class="hljs-string">"4 months"</span></span>,
+    "<span class="hljs-attribute">globalFeedbackOpenDuration</span>": <span class="hljs-value"><span class="hljs-string">"1 month"</span></span>,
+    "<span class="hljs-attribute">feedbackShareable</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+    "<span class="hljs-attribute">refreshTimeouts</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">default</span>": <span class="hljs-value"><span class="hljs-number">30000</span></span>,
+      "<span class="hljs-attribute">user</span>": <span class="hljs-value"><span class="hljs-number">18000</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">initialSetupDone</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
+  </span>}</span>,
+  "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"susann@loopline-systems.com"</span></span>,
+  "<span class="hljs-attribute">position</span>": <span class="hljs-value"><span class="hljs-string">"CEO"</span></span>,
+  "<span class="hljs-attribute">roles</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+      "<span class="hljs-attribute">role</span>": <span class="hljs-value"><span class="hljs-string">"ROLE_USER"</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Active user"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Allows user to login"</span></span>,
+      "<span class="hljs-attribute">toggleable</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
+      "<span class="hljs-attribute">role</span>": <span class="hljs-value"><span class="hljs-string">"ROLE_SUPERVISOR"</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Currently supervisor"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Can have supervisees"</span></span>,
+      "<span class="hljs-attribute">toggleable</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">6</span></span>,
+      "<span class="hljs-attribute">role</span>": <span class="hljs-value"><span class="hljs-string">"ROLE_USER_ACCEPTED_TOS"</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"User accepted ToS"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Basic role needed to access most of the API elements"</span></span>,
+      "<span class="hljs-attribute">toggleable</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+    </span>}
+  ]</span>,
+  "<span class="hljs-attribute">supervisor</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+  "<span class="hljs-attribute">teams</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"HR"</span></span>,
+      "<span class="hljs-attribute">organization</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+        "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Loopline Systems GmbH"</span></span>,
+        "<span class="hljs-attribute">logo</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+          "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"d47965e73e19a1ef8b5eeb0f2318a982.png"</span></span>,
+          "<span class="hljs-attribute">webPath</span>": <span class="hljs-value"><span class="hljs-string">"http://static.helen.dev/tal-lon-cdn/d47965e73e19a1ef8b5eeb0f2318a982.png"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">systemEmail</span>": <span class="hljs-value"><span class="hljs-string">"demo+organization@loopline-systems.com"</span></span>,
+        "<span class="hljs-attribute">globalFeedbackPeriodDuration</span>": <span class="hljs-value"><span class="hljs-string">"4 months"</span></span>,
+        "<span class="hljs-attribute">globalFeedbackOpenDuration</span>": <span class="hljs-value"><span class="hljs-string">"1 month"</span></span>,
+        "<span class="hljs-attribute">feedbackShareable</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+        "<span class="hljs-attribute">refreshTimeouts</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">default</span>": <span class="hljs-value"><span class="hljs-number">30000</span></span>,
+          "<span class="hljs-attribute">user</span>": <span class="hljs-value"><span class="hljs-number">18000</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">initialSetupDone</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">size</span>": <span class="hljs-value"><span class="hljs-number">4</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Strategy"</span></span>,
+      "<span class="hljs-attribute">organization</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+        "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Loopline Systems GmbH"</span></span>,
+        "<span class="hljs-attribute">logo</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+          "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"d47965e73e19a1ef8b5eeb0f2318a982.png"</span></span>,
+          "<span class="hljs-attribute">webPath</span>": <span class="hljs-value"><span class="hljs-string">"http://static.helen.dev/tal-lon-cdn/d47965e73e19a1ef8b5eeb0f2318a982.png"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">systemEmail</span>": <span class="hljs-value"><span class="hljs-string">"demo+organization@loopline-systems.com"</span></span>,
+        "<span class="hljs-attribute">globalFeedbackPeriodDuration</span>": <span class="hljs-value"><span class="hljs-string">"4 months"</span></span>,
+        "<span class="hljs-attribute">globalFeedbackOpenDuration</span>": <span class="hljs-value"><span class="hljs-string">"1 month"</span></span>,
+        "<span class="hljs-attribute">feedbackShareable</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+        "<span class="hljs-attribute">refreshTimeouts</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">default</span>": <span class="hljs-value"><span class="hljs-number">30000</span></span>,
+          "<span class="hljs-attribute">user</span>": <span class="hljs-value"><span class="hljs-number">18000</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">initialSetupDone</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">size</span>": <span class="hljs-value"><span class="hljs-number">1</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">3</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Project Mullins"</span></span>,
+      "<span class="hljs-attribute">organization</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+        "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Loopline Systems GmbH"</span></span>,
+        "<span class="hljs-attribute">logo</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+          "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"d47965e73e19a1ef8b5eeb0f2318a982.png"</span></span>,
+          "<span class="hljs-attribute">webPath</span>": <span class="hljs-value"><span class="hljs-string">"http://static.helen.dev/tal-lon-cdn/d47965e73e19a1ef8b5eeb0f2318a982.png"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">systemEmail</span>": <span class="hljs-value"><span class="hljs-string">"demo+organization@loopline-systems.com"</span></span>,
+        "<span class="hljs-attribute">globalFeedbackPeriodDuration</span>": <span class="hljs-value"><span class="hljs-string">"4 months"</span></span>,
+        "<span class="hljs-attribute">globalFeedbackOpenDuration</span>": <span class="hljs-value"><span class="hljs-string">"1 month"</span></span>,
+        "<span class="hljs-attribute">feedbackShareable</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+        "<span class="hljs-attribute">refreshTimeouts</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">default</span>": <span class="hljs-value"><span class="hljs-number">30000</span></span>,
+          "<span class="hljs-attribute">user</span>": <span class="hljs-value"><span class="hljs-number">18000</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">initialSetupDone</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">size</span>": <span class="hljs-value"><span class="hljs-number">7</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">4</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Finance"</span></span>,
+      "<span class="hljs-attribute">organization</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+        "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Loopline Systems GmbH"</span></span>,
+        "<span class="hljs-attribute">logo</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+          "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"d47965e73e19a1ef8b5eeb0f2318a982.png"</span></span>,
+          "<span class="hljs-attribute">webPath</span>": <span class="hljs-value"><span class="hljs-string">"http://static.helen.dev/tal-lon-cdn/d47965e73e19a1ef8b5eeb0f2318a982.png"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">systemEmail</span>": <span class="hljs-value"><span class="hljs-string">"demo+organization@loopline-systems.com"</span></span>,
+        "<span class="hljs-attribute">globalFeedbackPeriodDuration</span>": <span class="hljs-value"><span class="hljs-string">"4 months"</span></span>,
+        "<span class="hljs-attribute">globalFeedbackOpenDuration</span>": <span class="hljs-value"><span class="hljs-string">"1 month"</span></span>,
+        "<span class="hljs-attribute">feedbackShareable</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+        "<span class="hljs-attribute">refreshTimeouts</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">default</span>": <span class="hljs-value"><span class="hljs-number">30000</span></span>,
+          "<span class="hljs-attribute">user</span>": <span class="hljs-value"><span class="hljs-number">18000</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">initialSetupDone</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">size</span>": <span class="hljs-value"><span class="hljs-number">5</span>
+    </span>}
+  ]</span>,
+  "<span class="hljs-attribute">locale</span>": <span class="hljs-value"><span class="hljs-string">"de_DE"</span></span>,
+  "<span class="hljs-attribute">tourSectionsMissing</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"app.me.trainings"</span></span>,
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">4</span>
+    </span>}
+  ]</span>,
+  "<span class="hljs-attribute">acceptedTOS</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
+</span>}
+</code></pre><div class="description"><p>Returned when successful</p>
+</div></li><li data-toggle="collapse" data-target="#cc28ee24e962392f3dcb03fcf4babf88" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>401</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="cc28ee24e962392f3dcb03fcf4babf88" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when not authorized</p>
+</div></li><li data-toggle="collapse" data-target="#379992c836e6d1ab170185f90b8b91bd" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>404</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="379992c836e6d1ab170185f90b8b91bd" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when not found</p>
+</div></li></ul></div></section><section id="user-user-patch" class="panel panel-warning"><div data-toggle="collapse" data-target="#user-user-patch .content-group" class="panel-heading"><div style="float:right"><span>Update a single user</span></div><div style="float:left"><a href="#page:user,header:user-user-patch" class="btn btn-xs btn-warning">PATCH</a></div><div style="overflow:hidden"><code>/users/{id}</code></div></div><div class="panel content-group collapse"><div class="panel-body"><p>Update a single user</p>
+</div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>id</dt><dd><code>integer (\d+)</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>The id of the user to be changed</p>
+</dd><dt>email</dt><dd><code>string (\s+)</code>&nbsp;<span>(optional)</span>&nbsp;<p>The new email of the user</p>
+</dd><dt>locale</dt><dd><code>string (\s+)</code>&nbsp;<span>(optional)</span>&nbsp;<p>The new locale of the user</p>
+</dd><dt>firstname</dt><dd><code>string (\s+)</code>&nbsp;<span>(optional)</span>&nbsp;<p>The new firstname of the user</p>
+</dd><dt>lastname</dt><dd><code>string (\s+)</code>&nbsp;<span>(optional)</span>&nbsp;<p>The new lastname of the user</p>
+</dd><dt>position</dt><dd><code>bool</code>&nbsp;<span>(optional)</span>&nbsp;<p>Does the user accept the TOS</p>
+</dd></dl></li></ul><ul class="list-group"><li data-toggle="collapse" data-target="#28cd3b5a4874d82e5e223e39902b27ca" role="requestTrigger" class="list-group-item collapsed"><strong>Request</strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="28cd3b5a4874d82e5e223e39902b27ca" role="request" class="list-group-item panel-collapse collapse"><h5>Headers</h5><pre><code><span class="hljs-attribute">X-Api-Client</span>: <span class="hljs-string">&lt;CLIENT_ID&gt;</span><br/><span class="hljs-attribute">X-Api-Key</span>: <span class="hljs-string">&lt;API_KEY&gt;</span><br/><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br/></code></pre><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">firstname</span>": <span class="hljs-value"><span class="hljs-string">"Susann"</span></span>,
+  "<span class="hljs-attribute">lastname</span>": <span class="hljs-value"><span class="hljs-string">"Riley"</span>
+</span>}
+</code></pre><div class="description"><p>Example:</p>
+<pre><code class="language-bash">curl https://&lt;your_loopline_systems_domain&gt;/users/&lt;id&gt; -X PATCH \
+-H <span class="hljs-string">"X-Api-Client: &lt;CLIENT_ID&gt;"</span> \
+-H <span class="hljs-string">"X-Api-Key: &lt;API_KEY&gt;"</span> \
+-H <span class="hljs-string">"Content-Type: application/json"</span> \
+<span class="hljs-operator">-d</span> <span class="hljs-string">'{
+"firstname": "Susann",
+"lastname": "Riley"
+}'</span>
+</code></pre>
+</div></li><li data-toggle="collapse" data-target="#e9a9e10f546e5086248458094a4b9685" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="e9a9e10f546e5086248458094a4b9685" role="response" class="list-group-item panel-collapse collapse"><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">username</span>": <span class="hljs-value"><span class="hljs-string">"susann@loopline-systems.com"</span></span>,
+  "<span class="hljs-attribute">firstname</span>": <span class="hljs-value"><span class="hljs-string">"Susann"</span></span>,
+  "<span class="hljs-attribute">lastname</span>": <span class="hljs-value"><span class="hljs-string">"Rilay"</span></span>,
+  "<span class="hljs-attribute">image</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">webPath</span>": <span class="hljs-value"><span class="hljs-string">"http://static.helen.dev/tal-lon-cdn/"</span>
+  </span>}</span>,
+  "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"susann@loopline-systems.com"</span></span>,
+  "<span class="hljs-attribute">position</span>": <span class="hljs-value"><span class="hljs-string">"Customer Success Agent"</span></span>,
+  "<span class="hljs-attribute">active</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+  "<span class="hljs-attribute">activatedAt</span>": <span class="hljs-value"><span class="hljs-string">"08-06-2015"</span></span>,
+  "<span class="hljs-attribute">deactivatedAt</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+  "<span class="hljs-attribute">lastPasswordResetByAdmin</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+</span>}
+</code></pre><div class="description"><p>Returned when successful</p>
+</div></li><li data-toggle="collapse" data-target="#f1478418c78cd928f889ba67c2374a62" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>400</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="f1478418c78cd928f889ba67c2374a62" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when the request content is malformed</p>
+</div></li><li data-toggle="collapse" data-target="#994d33d1c597c950debadb67c729aa58" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>401</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="994d33d1c597c950debadb67c729aa58" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when not authorized</p>
+</div></li><li data-toggle="collapse" data-target="#cd16dc7b512db0b5a12f93e91a1298fb" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>404</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="cd16dc7b512db0b5a12f93e91a1298fb" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when not found</p>
+</div></li></ul></div></section><h4 id="user-supervisee-list">Supervisee List&nbsp;<a href="#page:user,header:user-supervisee-list"><i class="fa fa-link"></i></a></h4><section id="user-supervisee-list-get" class="panel panel-info"><div data-toggle="collapse" data-target="#user-supervisee-list-get .content-group" class="panel-heading"><div style="float:right"><span>Get all supervisees of an user</span></div><div style="float:left"><a href="#page:user,header:user-supervisee-list-get" class="btn btn-xs btn-primary">GET</a></div><div style="overflow:hidden"><code>/users/{id}/supervisees</code></div></div><div class="panel content-group collapse"><div class="panel-body"><p>Get all supervisees of an user</p>
+</div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>id</dt><dd><code>integer (\d+)</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>The id of the user</p>
+</dd></dl></li></ul><ul class="list-group"><li data-toggle="collapse" data-target="#197c12fb290c0ca94c706cc13be9861e" role="requestTrigger" class="list-group-item collapsed"><strong>Request</strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="197c12fb290c0ca94c706cc13be9861e" role="request" class="list-group-item panel-collapse collapse"><h5>Headers</h5><pre><code><span class="hljs-attribute">X-Api-Client</span>: <span class="hljs-string">&lt;CLIENT_ID&gt;</span><br/><span class="hljs-attribute">X-Api-Key</span>: <span class="hljs-string">&lt;API_KEY&gt;</span><br/></code></pre><div class="description"><p>Example:</p>
+<pre><code class="language-bash">curl https://&lt;your_loopline_systems_domain&gt;/users/&lt;id&gt;/supervisees -X GET \
+-H <span class="hljs-string">"X-Api-Client: &lt;CLIENT_ID&gt;"</span> \
+-H <span class="hljs-string">"X-Api-Key: &lt;API_KEY&gt;"</span>
+</code></pre>
+</div></li><li data-toggle="collapse" data-target="#b2aeff9f306229d78be64f6b6395a3b7" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="b2aeff9f306229d78be64f6b6395a3b7" role="response" class="list-group-item panel-collapse collapse"><h5>Body</h5><pre><code>[
+  {
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">3</span></span>,
+    "<span class="hljs-attribute">username</span>": <span class="hljs-value"><span class="hljs-string">"catrina@loopline-systems.com"</span></span>,
+    "<span class="hljs-attribute">firstname</span>": <span class="hljs-value"><span class="hljs-string">"Catrina"</span></span>,
+    "<span class="hljs-attribute">lastname</span>": <span class="hljs-value"><span class="hljs-string">"Carnahan"</span></span>,
+    "<span class="hljs-attribute">image</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">3</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+      "<span class="hljs-attribute">webPath</span>": <span class="hljs-value"><span class="hljs-string">"http://static.helen.dev/tal-lon-cdn/"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"catrina@loopline-systems.com"</span></span>,
+    "<span class="hljs-attribute">position</span>": <span class="hljs-value"><span class="hljs-string">"CFO"</span></span>,
+    "<span class="hljs-attribute">recommendable</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+    "<span class="hljs-attribute">teams</span>": <span class="hljs-value">[
+      {
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">3</span></span>,
+        "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Project Mullins"</span></span>,
+        "<span class="hljs-attribute">isLead</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+        "<span class="hljs-attribute">size</span>": <span class="hljs-value"><span class="hljs-number">6</span>
+      </span>},
+      {
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">4</span></span>,
+        "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Finance"</span></span>,
+        "<span class="hljs-attribute">isLead</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+        "<span class="hljs-attribute">size</span>": <span class="hljs-value"><span class="hljs-number">3</span>
+      </span>},
+      {
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">5</span></span>,
+        "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Efficiency 440"</span></span>,
+        "<span class="hljs-attribute">isLead</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+        "<span class="hljs-attribute">size</span>": <span class="hljs-value"><span class="hljs-number">3</span>
+      </span>},
+      {
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">6</span></span>,
+        "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"UI/UX"</span></span>,
+        "<span class="hljs-attribute">isLead</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+        "<span class="hljs-attribute">size</span>": <span class="hljs-value"><span class="hljs-number">4</span>
+      </span>}
+    ]</span>,
+    "<span class="hljs-attribute">activeFeedbackPeriod</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">user</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">feedbackPeriodConfig</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">4</span></span>,
+        "<span class="hljs-attribute">start</span>": <span class="hljs-value"><span class="hljs-string">"2015-02-23"</span></span>,
+        "<span class="hljs-attribute">end</span>": <span class="hljs-value"><span class="hljs-string">"2015-06-22"</span></span>,
+        "<span class="hljs-attribute">feedbackOpen</span>": <span class="hljs-value"><span class="hljs-string">"2015-05-23"</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"prepared"</span></span>,
+      "<span class="hljs-attribute">statusSupervisee</span>": <span class="hljs-value"><span class="hljs-string">"prepared"</span></span>,
+      "<span class="hljs-attribute">statusSupervisor</span>": <span class="hljs-value"><span class="hljs-string">"prepared"</span></span>,
+      "<span class="hljs-attribute">shared</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">44</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">currentFeedbackPeriod</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">user</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">feedbackPeriodConfig</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">4</span></span>,
+        "<span class="hljs-attribute">start</span>": <span class="hljs-value"><span class="hljs-string">"2015-02-23"</span></span>,
+        "<span class="hljs-attribute">end</span>": <span class="hljs-value"><span class="hljs-string">"2015-06-22"</span></span>,
+        "<span class="hljs-attribute">feedbackOpen</span>": <span class="hljs-value"><span class="hljs-string">"2015-05-23"</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"prepared"</span></span>,
+      "<span class="hljs-attribute">statusSupervisee</span>": <span class="hljs-value"><span class="hljs-string">"prepared"</span></span>,
+      "<span class="hljs-attribute">statusSupervisor</span>": <span class="hljs-value"><span class="hljs-string">"prepared"</span></span>,
+      "<span class="hljs-attribute">shared</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">44</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">active</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+    "<span class="hljs-attribute">activatedAt</span>": <span class="hljs-value"><span class="hljs-string">"08-06-2015"</span></span>,
+    "<span class="hljs-attribute">deactivatedAt</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">lastPasswordResetByAdmin</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+  </span>},
+]
+</code></pre><div class="description"><p>Returned when successful</p>
+</div></li><li data-toggle="collapse" data-target="#3554139ff4bd6a79295f4bb5c689c7bd" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>401</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="3554139ff4bd6a79295f4bb5c689c7bd" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when not authorized</p>
+</div></li><li data-toggle="collapse" data-target="#9c99448d69e6bcb99394f1f990997912" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>403</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="9c99448d69e6bcb99394f1f990997912" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when not allowed</p>
+</div></li><li data-toggle="collapse" data-target="#bcfe56abb6ad1d658a15ea7e13b30023" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>404</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="bcfe56abb6ad1d658a15ea7e13b30023" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when not found</p>
+</div></li></ul></div></section><h4 id="user-supervisor">Supervisor&nbsp;<a href="#page:user,header:user-supervisor"><i class="fa fa-link"></i></a></h4><section id="user-supervisor-post" class="panel panel-success"><div data-toggle="collapse" data-target="#user-supervisor-post .content-group" class="panel-heading"><div style="float:right"><span>Assign a supervisor to a user</span></div><div style="float:left"><a href="#page:user,header:user-supervisor-post" class="btn btn-xs btn-success">POST</a></div><div style="overflow:hidden"><code>/users/{id}/supervisor/{supervisor_id}</code></div></div><div class="panel content-group collapse"><div class="panel-body"><p>Assign a supervisor to a user. You must be Admin to access this resource</p>
+</div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>id</dt><dd><code>integer (\d+)</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>The id of the supervisee</p>
+</dd><dt>supervisor_id</dt><dd><code>integer (\d+)</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>The id of the supervisor</p>
+</dd></dl></li></ul><ul class="list-group"><li data-toggle="collapse" data-target="#c1d93d41cf19537ceacc59445cad4ef5" role="requestTrigger" class="list-group-item collapsed"><strong>Request</strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="c1d93d41cf19537ceacc59445cad4ef5" role="request" class="list-group-item panel-collapse collapse"><h5>Headers</h5><pre><code><span class="hljs-attribute">X-Api-Client</span>: <span class="hljs-string">&lt;CLIENT_ID&gt;</span><br/><span class="hljs-attribute">X-Api-Key</span>: <span class="hljs-string">&lt;API_KEY&gt;</span><br/></code></pre><div class="description"><p>Example:</p>
+<pre><code class="language-bash">curl https://&lt;your_loopline_systems_domain&gt;/users/&lt;id&gt;/supervisor/&lt;supervisor_id&gt; -X POST \
+-H <span class="hljs-string">"X-Api-Client: &lt;CLIENT_ID&gt;"</span> \
+-H <span class="hljs-string">"X-Api-Key: &lt;API_KEY&gt;"</span>
+</code></pre>
+</div></li><li data-toggle="collapse" data-target="#445fd725b1ce5700062223412fdde99c" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>201</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="445fd725b1ce5700062223412fdde99c" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when created</p>
+</div></li><li data-toggle="collapse" data-target="#d560da46abe2c11e51b8d4562bf9ad64" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>400</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="d560da46abe2c11e51b8d4562bf9ad64" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when the request content is malformed</p>
+</div></li><li data-toggle="collapse" data-target="#c580b4053771db5b1c11f290e915152f" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>401</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="c580b4053771db5b1c11f290e915152f" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when not authorized</p>
+</div></li><li data-toggle="collapse" data-target="#6e2fa4cca6ae9b484b654fb9b8b50785" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>403</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="6e2fa4cca6ae9b484b654fb9b8b50785" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when not allowed</p>
+</div></li><li data-toggle="collapse" data-target="#b03cbef15efc31ee1ac072e3d8219f4d" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>404</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="b03cbef15efc31ee1ac072e3d8219f4d" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when not found</p>
+</div></li></ul></div></section><section id="user-supervisor-delete" class="panel panel-danger"><div data-toggle="collapse" data-target="#user-supervisor-delete .content-group" class="panel-heading"><div style="float:right"><span>Remove a supervisee from a supervisor</span></div><div style="float:left"><a href="#page:user,header:user-supervisor-delete" class="btn btn-xs btn-danger">DELETE</a></div><div style="overflow:hidden"><code>/users/{id}/supervisor/{supervisor_id}</code></div></div><div class="panel content-group collapse"><div class="panel-body"><p>Remove a supervisee from a supervisor. You need to be supervisor of the user or admin</p>
+</div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>id</dt><dd><code>integer (\d+)</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>The id of the supervisee</p>
+</dd><dt>supervisor_id</dt><dd><code>integer (\d+)</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>The id of the supervisor</p>
+</dd></dl></li></ul><ul class="list-group"><li data-toggle="collapse" data-target="#66065aa854a71ddcf81f00f77f340ef5" role="requestTrigger" class="list-group-item collapsed"><strong>Request</strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="66065aa854a71ddcf81f00f77f340ef5" role="request" class="list-group-item panel-collapse collapse"><h5>Headers</h5><pre><code><span class="hljs-attribute">X-Api-Client</span>: <span class="hljs-string">&lt;CLIENT_ID&gt;</span><br/><span class="hljs-attribute">X-Api-Key</span>: <span class="hljs-string">&lt;API_KEY&gt;</span><br/></code></pre><div class="description"><p>Example:</p>
+<pre><code class="language-bash">curl https://&lt;your_loopline_systems_domain&gt;/users/&lt;id&gt;/supervisor/&lt;supervisor_id&gt; -X DELETE \
+-H <span class="hljs-string">"X-Api-Client: &lt;CLIENT_ID&gt;"</span> \
+-H <span class="hljs-string">"X-Api-Key: &lt;API_KEY&gt;"</span>
+</code></pre>
+</div></li><li data-toggle="collapse" data-target="#3fd7ec16df652b02245214b56be053f6" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>204</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="3fd7ec16df652b02245214b56be053f6" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when user deleted</p>
+</div></li><li data-toggle="collapse" data-target="#fa7d65c6c107a0a46c1353cc134bfb8a" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>401</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="fa7d65c6c107a0a46c1353cc134bfb8a" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when not authorized</p>
+</div></li><li data-toggle="collapse" data-target="#7a1be11bf3afd7306c58407442c7c738" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>403</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="7a1be11bf3afd7306c58407442c7c738" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when forbidden</p>
+</div></li><li data-toggle="collapse" data-target="#f91b96780e83835fd5e839a3ac82a8bd" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>404</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="f91b96780e83835fd5e839a3ac82a8bd" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when supervisee not found</p>
+</div></li></ul></div></section><h4 id="user-user-image">User Image&nbsp;<a href="#page:user,header:user-user-image"><i class="fa fa-link"></i></a></h4><section id="user-user-image-post" class="panel panel-success"><div data-toggle="collapse" data-target="#user-user-image-post .content-group" class="panel-heading"><div style="float:right"><span>Update the profile image of an user</span></div><div style="float:left"><a href="#page:user,header:user-user-image-post" class="btn btn-xs btn-success">POST</a></div><div style="overflow:hidden"><code>/users/{id}/image</code></div></div><div class="panel content-group collapse"><div class="panel-body"><p>Update the profile image of an user. The image is submitted in the request body</p>
+</div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>id</dt><dd><code>integer (\d+)</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>The id of the user</p>
+</dd></dl></li></ul><ul class="list-group"><li data-toggle="collapse" data-target="#3eec5c13e90d4205c04db3fafb6939c8" role="requestTrigger" class="list-group-item collapsed"><strong>Request</strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="3eec5c13e90d4205c04db3fafb6939c8" role="request" class="list-group-item panel-collapse collapse"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">multipart/form-data; boundary=---BOUNDARY</span><br/><span class="hljs-attribute">X-Api-Client</span>: <span class="hljs-string">&lt;CLIENT_ID&gt;</span><br/><span class="hljs-attribute">X-Api-Key</span>: <span class="hljs-string">&lt;API_KEY&gt;</span><br/></code></pre><div class="description"><p>Example:</p>
+<pre><code class="language-bash">curl https://&lt;your_loopline_systems_domain&gt;/users/&lt;id&gt;/image -X POST \
+-H <span class="hljs-string">"X-Api-Client: &lt;CLIENT_ID&gt;"</span> \
+-H <span class="hljs-string">"X-Api-Key: &lt;API_KEY&gt;"</span> \ 
+-F name=file -F file=@example.jpg
+</code></pre>
+</div></li><li data-toggle="collapse" data-target="#ae1deb0846fd91517cd42d330b2a0437" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>201</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="ae1deb0846fd91517cd42d330b2a0437" role="response" class="list-group-item panel-collapse collapse"><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">19</span></span>,
+  "<span class="hljs-attribute">webPath</span>": <span class="hljs-value"><span class="hljs-string">"http://example.com/user-image.jpeg"</span>
+</span>}
+</code></pre><div class="description"><p>Returned when created</p>
+</div></li><li data-toggle="collapse" data-target="#815dfa8881bfdb072cddb53ab4527788" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>400</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="815dfa8881bfdb072cddb53ab4527788" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when the request content is malformed</p>
+</div></li><li data-toggle="collapse" data-target="#68e605e14bbf16665a247ef91c009b31" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>401</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="68e605e14bbf16665a247ef91c009b31" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when not authorized</p>
+</div></li><li data-toggle="collapse" data-target="#14ec6ead642bda2d92075955a2a60681" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>403</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="14ec6ead642bda2d92075955a2a60681" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when forbidden</p>
+</div></li></ul></div></section><section id="user-user-image-delete" class="panel panel-danger"><div data-toggle="collapse" data-target="#user-user-image-delete .content-group" class="panel-heading"><div style="float:right"><span>Delete the profile image of an user</span></div><div style="float:left"><a href="#page:user,header:user-user-image-delete" class="btn btn-xs btn-danger">DELETE</a></div><div style="overflow:hidden"><code>/users/{id}/image</code></div></div><div class="panel content-group collapse"><div class="panel-body"><p>Delete the profile image of an user</p>
+</div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>id</dt><dd><code>integer (\d+)</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>The id of the user</p>
+</dd></dl></li></ul><ul class="list-group"><li data-toggle="collapse" data-target="#7b6d03168a49111ad4b96e8f5156ca17" role="requestTrigger" class="list-group-item collapsed"><strong>Request</strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="7b6d03168a49111ad4b96e8f5156ca17" role="request" class="list-group-item panel-collapse collapse"><h5>Headers</h5><pre><code><span class="hljs-attribute">X-Api-Client</span>: <span class="hljs-string">&lt;CLIENT_ID&gt;</span><br/><span class="hljs-attribute">X-Api-Key</span>: <span class="hljs-string">&lt;API_KEY&gt;</span><br/></code></pre><div class="description"><p>Example:</p>
+<pre><code class="language-bash">curl https://&lt;your_loopline_systems_domain&gt;/users/&lt;id&gt;/image -X DELETE \
+-H <span class="hljs-string">"X-Api-Client: &lt;CLIENT_ID&gt;"</span> \
+-H <span class="hljs-string">"X-Api-Key: &lt;API_KEY&gt;"</span>
+</code></pre>
+</div></li><li data-toggle="collapse" data-target="#d52f3ed36dc47e335d4db9aacec2cde8" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="d52f3ed36dc47e335d4db9aacec2cde8" role="response" class="list-group-item panel-collapse collapse"><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
+  "<span class="hljs-attribute">username</span>": <span class="hljs-value"><span class="hljs-string">"susann@loopline-systems.com"</span></span>,
+  "<span class="hljs-attribute">firstname</span>": <span class="hljs-value"><span class="hljs-string">"Susann"</span></span>,
+  "<span class="hljs-attribute">lastname</span>": <span class="hljs-value"><span class="hljs-string">"Riley"</span></span>,
+  "<span class="hljs-attribute">image</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">webPath</span>": <span class="hljs-value"><span class="hljs-string">"http://static.helen.dev/tal-lon-cdn/"</span>
+  </span>}</span>,
+  "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"susann@loopline-systems.com"</span></span>,
+  "<span class="hljs-attribute">position</span>": <span class="hljs-value"><span class="hljs-string">"CEO"</span></span>,
+  "<span class="hljs-attribute">roles</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+      "<span class="hljs-attribute">role</span>": <span class="hljs-value"><span class="hljs-string">"ROLE_USER"</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Active user"</span></span>,
+      "<span class="hljs-attribute">toggleable</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
+    </span>}
+  ]</span>,
+  "<span class="hljs-attribute">supervisor</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
+    "<span class="hljs-attribute">username</span>": <span class="hljs-value"><span class="hljs-string">"christian.miller@loopline-systems.com"</span></span>,
+    "<span class="hljs-attribute">firstname</span>": <span class="hljs-value"><span class="hljs-string">"Christian"</span></span>,
+    "<span class="hljs-attribute">lastname</span>": <span class="hljs-value"><span class="hljs-string">"Miller"</span></span>,
+    "<span class="hljs-attribute">image</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+      "<span class="hljs-attribute">webPath</span>": <span class="hljs-value"><span class="hljs-string">"http://static.helen.dev/tal-lon-cdn/christian.miller.jpg"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"christian.miller@loopline-systems.com"</span></span>,
+    "<span class="hljs-attribute">position</span>": <span class="hljs-value"><span class="hljs-string">"CEO"</span></span>,
+    "<span class="hljs-attribute">roles</span>": <span class="hljs-value">[]</span>,
+    "<span class="hljs-attribute">supervisor</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">recommendable</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">teams</span>": <span class="hljs-value">[]</span>,
+    "<span class="hljs-attribute">active</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+    "<span class="hljs-attribute">acceptedTOS</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+    "<span class="hljs-attribute">activatedAt</span>": <span class="hljs-value"><span class="hljs-string">"08-06-2015"</span></span>,
+    "<span class="hljs-attribute">deactivatedAt</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">lastPasswordResetByAdmin</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+  </span>}</span>,
+  "<span class="hljs-attribute">recommendable</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+  "<span class="hljs-attribute">teams</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"HR"</span></span>,
+      "<span class="hljs-attribute">isLead</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+      "<span class="hljs-attribute">size</span>": <span class="hljs-value"><span class="hljs-number">1</span>
+    </span>}
+  ]</span>,
+  "<span class="hljs-attribute">active</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+  "<span class="hljs-attribute">acceptedTOS</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+  "<span class="hljs-attribute">activatedAt</span>": <span class="hljs-value"><span class="hljs-string">"08-06-2015"</span></span>,
+  "<span class="hljs-attribute">deactivatedAt</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+  "<span class="hljs-attribute">lastPasswordResetByAdmin</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+</span>}
+</code></pre><div class="description"><p>Returned when deleted, including user entity</p>
+</div></li><li data-toggle="collapse" data-target="#2156f25e47de22a4216db1a27ed7b98a" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>401</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="2156f25e47de22a4216db1a27ed7b98a" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when not authorized</p>
+</div></li><li data-toggle="collapse" data-target="#683e29222233ed18d11dc4c6ccf17326" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>403</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="683e29222233ed18d11dc4c6ccf17326" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when forbidden</p>
+</div></li><li data-toggle="collapse" data-target="#435cd931c482d65d0c6caf1363864e0e" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>404</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="435cd931c482d65d0c6caf1363864e0e" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when not found</p>
+</div></li></ul></div></section></div></div><a href="#page:role" class="btn btn-default pull-right">Next&nbsp;<i class="fa fa-arrow-circle-right"></i></a><a href="#" class="btn btn-default"><i class="fa fa-arrow-circle-left"></i> Previous</a><div class="clearfix"></div><hr/></div><div data-bind="visible: page() == 'role', style: {marginTop: page() == 'role' ? '38px' : ''}"><div class="panel panel-default"><div class="panel-heading"><h3 id="role">Role&nbsp;<a href="#page:role"><i class="fa fa-link"></i></a></h3></div><div class="panel-body"><h4 id="role-role-list">Role List&nbsp;<a href="#page:role,header:role-role-list"><i class="fa fa-link"></i></a></h4><section id="role-role-list-get" class="panel panel-info"><div data-toggle="collapse" data-target="#role-role-list-get .content-group" class="panel-heading"><div style="float:right"><span>Get all roles</span></div><div style="float:left"><a href="#page:role,header:role-role-list-get" class="btn btn-xs btn-primary">GET</a></div><div style="overflow:hidden"><code>/roles</code></div></div><div class="panel content-group collapse"><div class="panel-body"><p>Get all roles</p>
+</div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>filter</dt><dd><code>string (\w+)</code>&nbsp;<span>(optional)</span>&nbsp;<p>The filter for the roles</p>
+<p><strong>Choices:&nbsp;</strong><code>api-roles</code> </p></dd></dl></li></ul><ul class="list-group"><li data-toggle="collapse" data-target="#e92fd7e1e23c47c383ccbc3ac1f5c646" role="requestTrigger" class="list-group-item collapsed"><strong>Request</strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="e92fd7e1e23c47c383ccbc3ac1f5c646" role="request" class="list-group-item panel-collapse collapse"><h5>Headers</h5><pre><code><span class="hljs-attribute">X-Api-Client</span>: <span class="hljs-string">&lt;CLIENT_ID&gt;</span><br/><span class="hljs-attribute">X-Api-Key</span>: <span class="hljs-string">&lt;API_KEY&gt;</span><br/></code></pre><div class="description"><p>Example:</p>
+<pre><code class="language-bash">curl https://&lt;your_loopline_systems_domain&gt;/roles -X GET \
+-H <span class="hljs-string">"X-Api-Client: &lt;CLIENT_ID&gt;"</span> \
+-H <span class="hljs-string">"X-Api-Key: &lt;API_KEY&gt;"</span>
+</code></pre>
+</div></li><li data-toggle="collapse" data-target="#eb7a58fa49c067fe396e2f297f8762dc" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="eb7a58fa49c067fe396e2f297f8762dc" role="response" class="list-group-item panel-collapse collapse"><h5>Body</h5><pre><code>[
+  {
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+    "<span class="hljs-attribute">role</span>": <span class="hljs-value"><span class="hljs-string">"ROLE_USER"</span></span>,
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Active user"</span></span>,
+    "<span class="hljs-attribute">toggleable</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
+  </span>},
+  {
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">4</span></span>,
+    "<span class="hljs-attribute">role</span>": <span class="hljs-value"><span class="hljs-string">"ROLE_ADMIN"</span></span>,
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"System admin"</span></span>,
+    "<span class="hljs-attribute">toggleable</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
+  </span>},
+  {
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">7</span></span>,
+    "<span class="hljs-attribute">role</span>": <span class="hljs-value"><span class="hljs-string">"ROLE_CAN_BE_SUPERVISOR"</span></span>,
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Can have direct reports"</span></span>,
+    "<span class="hljs-attribute">toggleable</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
+  </span>}
+]
+</code></pre><div class="description"><p>Returned when successful</p>
+</div></li><li data-toggle="collapse" data-target="#f01009c4917042e5bc3140e598d0633e" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>401</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="f01009c4917042e5bc3140e598d0633e" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when not authorized</p>
+</div></li></ul></div></section><h4 id="role-role">Role&nbsp;<a href="#page:role,header:role-role"><i class="fa fa-link"></i></a></h4><section id="role-role-get" class="panel panel-info"><div data-toggle="collapse" data-target="#role-role-get .content-group" class="panel-heading"><div style="float:right"><span>Get a single role</span></div><div style="float:left"><a href="#page:role,header:role-role-get" class="btn btn-xs btn-primary">GET</a></div><div style="overflow:hidden"><code>/roles/{id}</code></div></div><div class="panel content-group collapse"><div class="panel-body"><p>Get a single role</p>
+</div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>id</dt><dd><code>integer (\d+)</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>The id of the role</p>
+</dd></dl></li></ul><ul class="list-group"><li data-toggle="collapse" data-target="#0f95c6815716916cf52165988df8d64b" role="requestTrigger" class="list-group-item collapsed"><strong>Request</strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="0f95c6815716916cf52165988df8d64b" role="request" class="list-group-item panel-collapse collapse"><h5>Headers</h5><pre><code><span class="hljs-attribute">X-Api-Client</span>: <span class="hljs-string">&lt;CLIENT_ID&gt;</span><br/><span class="hljs-attribute">X-Api-Key</span>: <span class="hljs-string">&lt;API_KEY&gt;</span><br/></code></pre><div class="description"><p>Example:</p>
+<pre><code class="language-bash">curl https://&lt;your_loopline_systems_domain&gt;/roles/&lt;id&gt; -X GET \
+-H <span class="hljs-string">"X-Api-Client: &lt;CLIENT_ID&gt;"</span> \
+-H <span class="hljs-string">"X-Api-Key: &lt;API_KEY&gt;"</span>
+</code></pre>
+</div></li><li data-toggle="collapse" data-target="#8584128c53a393f8e6e44f12aa22583a" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="8584128c53a393f8e6e44f12aa22583a" role="response" class="list-group-item panel-collapse collapse"><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">4</span></span>,
+  "<span class="hljs-attribute">role</span>": <span class="hljs-value"><span class="hljs-string">"ROLE_ADMIN"</span></span>,
+  "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"System admin"</span></span>,
+  "<span class="hljs-attribute">toggleable</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
+</span>}
+</code></pre><div class="description"><p>Returned when successful</p>
+</div></li><li data-toggle="collapse" data-target="#ccd4367b1cca9cbf01b4d8d2f09561da" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>401</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="ccd4367b1cca9cbf01b4d8d2f09561da" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when not authorized</p>
+</div></li><li data-toggle="collapse" data-target="#f7bdebb1e80e8ad848bbcab27fcbbf18" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>404</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="f7bdebb1e80e8ad848bbcab27fcbbf18" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when not found</p>
+</div></li></ul></div></section><h4 id="role-role-membership">Role Membership&nbsp;<a href="#page:role,header:role-role-membership"><i class="fa fa-link"></i></a></h4><section id="role-role-membership-post" class="panel panel-success"><div data-toggle="collapse" data-target="#role-role-membership-post .content-group" class="panel-heading"><div style="float:right"><span>Add a role to a user</span></div><div style="float:left"><a href="#page:role,header:role-role-membership-post" class="btn btn-xs btn-success">POST</a></div><div style="overflow:hidden"><code>/users/{id}/role/{role_id}</code></div></div><div class="panel content-group collapse"><div class="panel-body"><p>Add a role to a user</p>
+</div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>id</dt><dd><code>integer (\d+)</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>The id of the user</p>
+</dd><dt>role_id</dt><dd><code>integer (\d+)</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>The id of the Role</p>
+</dd></dl></li></ul><ul class="list-group"><li data-toggle="collapse" data-target="#8ac20b3e154421dc1e7c102d5830dcc2" role="requestTrigger" class="list-group-item collapsed"><strong>Request</strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="8ac20b3e154421dc1e7c102d5830dcc2" role="request" class="list-group-item panel-collapse collapse"><h5>Headers</h5><pre><code><span class="hljs-attribute">X-Api-Client</span>: <span class="hljs-string">&lt;CLIENT_ID&gt;</span><br/><span class="hljs-attribute">X-Api-Key</span>: <span class="hljs-string">&lt;API_KEY&gt;</span><br/></code></pre><div class="description"><p>Example:</p>
+<pre><code class="language-bash">curl https://&lt;your_loopline_systems_domain&gt;/users/&lt;id&gt;/role/&lt;role_id&gt; -X POST \
+-H <span class="hljs-string">"X-Api-Client: &lt;CLIENT_ID&gt;"</span> \
+-H <span class="hljs-string">"X-Api-Key: &lt;API_KEY&gt;"</span>
+</code></pre>
+</div></li><li data-toggle="collapse" data-target="#9469cc9d09535e8c5ec66f5cadeeb670" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>201</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="9469cc9d09535e8c5ec66f5cadeeb670" role="response" class="list-group-item panel-collapse collapse"><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">id</span>":<span class="hljs-value"><span class="hljs-number">18</span></span>,
+  "<span class="hljs-attribute">locale</span>":<span class="hljs-value"><span class="hljs-string">"en_US"</span>
+</span>}
+</code></pre><div class="description"><p>Returned when created</p>
+</div></li><li data-toggle="collapse" data-target="#338737c6fdc1463e5bd3114ec67bbe09" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>401</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="338737c6fdc1463e5bd3114ec67bbe09" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when not authorized</p>
+</div></li><li data-toggle="collapse" data-target="#f85cdcb4cd367415f87a7474836d9da2" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>403</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="f85cdcb4cd367415f87a7474836d9da2" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when not allowed</p>
+</div></li><li data-toggle="collapse" data-target="#202fe29c82178fd0facf76e5d026f121" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>404</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="202fe29c82178fd0facf76e5d026f121" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when not found</p>
+</div></li></ul></div></section><section id="role-role-membership-delete" class="panel panel-danger"><div data-toggle="collapse" data-target="#role-role-membership-delete .content-group" class="panel-heading"><div style="float:right"><span>Remove a role from a user</span></div><div style="float:left"><a href="#page:role,header:role-role-membership-delete" class="btn btn-xs btn-danger">DELETE</a></div><div style="overflow:hidden"><code>/users/{id}/role/{role_id}</code></div></div><div class="panel content-group collapse"><div class="panel-body"><p>Remove a role from a user</p>
+</div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>id</dt><dd><code>integer (\d+)</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>The id of the user</p>
+</dd><dt>role_id</dt><dd><code>integer (\d+)</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>The id of the Role</p>
+</dd></dl></li></ul><ul class="list-group"><li data-toggle="collapse" data-target="#b8881c787bc6ce9ec77acf79e20f6398" role="requestTrigger" class="list-group-item collapsed"><strong>Request</strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="b8881c787bc6ce9ec77acf79e20f6398" role="request" class="list-group-item panel-collapse collapse"><h5>Headers</h5><pre><code><span class="hljs-attribute">X-Api-Client</span>: <span class="hljs-string">&lt;CLIENT_ID&gt;</span><br/><span class="hljs-attribute">X-Api-Key</span>: <span class="hljs-string">&lt;API_KEY&gt;</span><br/></code></pre><div class="description"><p>Example:</p>
+<pre><code class="language-bash">curl https://&lt;your_loopline_systems_domain&gt;/users/&lt;id&gt;/role/&lt;role_id&gt; -X DELETE \
+-H <span class="hljs-string">"X-Api-Client: &lt;CLIENT_ID&gt;"</span> \
+-H <span class="hljs-string">"X-Api-Key: &lt;API_KEY&gt;"</span>
+</code></pre>
+</div></li><li data-toggle="collapse" data-target="#52cb95d54855ded8d950e539431b99fe" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>204</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="52cb95d54855ded8d950e539431b99fe" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when role has been deleted</p>
+</div></li><li data-toggle="collapse" data-target="#d137a07820f55f3f5ff7cd405931565d" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>401</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="d137a07820f55f3f5ff7cd405931565d" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when not authorized</p>
+</div></li><li data-toggle="collapse" data-target="#2ad9e00a3f0b13535e562170fa8a0f47" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>403</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="2ad9e00a3f0b13535e562170fa8a0f47" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when not allowed</p>
+</div></li><li data-toggle="collapse" data-target="#18a613dde54404465fdff36957e7b559" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>404</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="18a613dde54404465fdff36957e7b559" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when not found</p>
+</div></li></ul></div></section></div></div><a href="#page:team" class="btn btn-default pull-right">Next&nbsp;<i class="fa fa-arrow-circle-right"></i></a><a href="#page:user" class="btn btn-default"><i class="fa fa-arrow-circle-left"></i> Previous</a><div class="clearfix"></div><hr/></div><div data-bind="visible: page() == 'team', style: {marginTop: page() == 'team' ? '38px' : ''}"><div class="panel panel-default"><div class="panel-heading"><h3 id="team">Team&nbsp;<a href="#page:team"><i class="fa fa-link"></i></a></h3></div><div class="panel-body"><h4 id="team-team-list">Team List&nbsp;<a href="#page:team,header:team-team-list"><i class="fa fa-link"></i></a></h4><section id="team-team-list-get" class="panel panel-info"><div data-toggle="collapse" data-target="#team-team-list-get .content-group" class="panel-heading"><div style="float:right"><span>Get all teams</span></div><div style="float:left"><a href="#page:team,header:team-team-list-get" class="btn btn-xs btn-primary">GET</a></div><div style="overflow:hidden"><code>/teams</code></div></div><div class="panel content-group collapse"><div class="panel-body"><p>Get all teams</p>
+</div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>members</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-info default"><strong>Default:&nbsp;</strong><span>false</span></span>&nbsp;<p>Add Members to response</p>
+</dd><dt>filter.user</dt><dd><code>integer (\d+)</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-info default"><strong>Default:&nbsp;</strong><span>false</span></span>&nbsp;<p>Filter by user</p>
+</dd></dl></li></ul><ul class="list-group"><li data-toggle="collapse" data-target="#b23a33491e193027e1ccf65398b7d419" role="requestTrigger" class="list-group-item collapsed"><strong>Request</strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="b23a33491e193027e1ccf65398b7d419" role="request" class="list-group-item panel-collapse collapse"><h5>Headers</h5><pre><code><span class="hljs-attribute">X-Api-Client</span>: <span class="hljs-string">&lt;CLIENT_ID&gt;</span><br/><span class="hljs-attribute">X-Api-Key</span>: <span class="hljs-string">&lt;API_KEY&gt;</span><br/></code></pre><div class="description"><p>Example:</p>
+<pre><code class="language-bash">curl https://&lt;your_loopline_systems_domain&gt;/teams -X GET \
+-H <span class="hljs-string">"X-Api-Client: &lt;CLIENT_ID&gt;"</span> \
+-H <span class="hljs-string">"X-Api-Key: &lt;API_KEY&gt;"</span>
+</code></pre>
+</div></li><li data-toggle="collapse" data-target="#15c0ce2b543d7517316e2ed2d98e1587" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="15c0ce2b543d7517316e2ed2d98e1587" role="response" class="list-group-item panel-collapse collapse"><h5>Body</h5><pre><code>[
+  {
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"HR"</span></span>,
+    "<span class="hljs-attribute">documents</span>": <span class="hljs-value">[
+
+    ]</span>,
+    "<span class="hljs-attribute">isLead</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+    "<span class="hljs-attribute">teamlead</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
+      "<span class="hljs-attribute">username</span>": <span class="hljs-value"><span class="hljs-string">"susann@loopline-systems.com"</span></span>,
+      "<span class="hljs-attribute">firstname</span>": <span class="hljs-value"><span class="hljs-string">"Susann"</span></span>,
+      "<span class="hljs-attribute">lastname</span>": <span class="hljs-value"><span class="hljs-string">"Riley"</span></span>,
+      "<span class="hljs-attribute">image</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
+        "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"cee9262a8929dfe7584a98548f70f948.jpeg"</span></span>,
+        "<span class="hljs-attribute">webPath</span>": <span class="hljs-value"><span class="hljs-string">"http://static.helen.dev/tal-lon-cdn/cee9262a8929dfe7584a98548f70f948.jpeg"</span></span>,
+        "<span class="hljs-attribute">size</span>": <span class="hljs-value"><span class="hljs-number">13795</span></span>,
+        "<span class="hljs-attribute">mimeType</span>": <span class="hljs-value"><span class="hljs-string">"image/jpeg"</span></span>,
+        "<span class="hljs-attribute">createdAt</span>": <span class="hljs-value"><span class="hljs-string">"2015-06-18T08:28:10+0000"</span></span>,
+        "<span class="hljs-attribute">originalName</span>": <span class="hljs-value"><span class="hljs-string">"Susann"</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"susann@loopline-systems.com"</span></span>,
+      "<span class="hljs-attribute">position</span>": <span class="hljs-value"><span class="hljs-string">"CEO"</span></span>,
+      "<span class="hljs-attribute">active</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+      "<span class="hljs-attribute">createdAt</span>": <span class="hljs-value"><span class="hljs-string">"2015-06-18T08:26:09+0000"</span></span>,
+      "<span class="hljs-attribute">activatedAt</span>": <span class="hljs-value"><span class="hljs-string">"18-06-2015"</span></span>,
+      "<span class="hljs-attribute">deactivatedAt</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">lastPasswordResetByAdmin</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">size</span>": <span class="hljs-value"><span class="hljs-number">1</span>
+  </span>},
+  {
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Strategy"</span></span>,
+    "<span class="hljs-attribute">documents</span>": <span class="hljs-value">[
+
+    ]</span>,
+    "<span class="hljs-attribute">isLead</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+    "<span class="hljs-attribute">teamlead</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
+      "<span class="hljs-attribute">username</span>": <span class="hljs-value"><span class="hljs-string">"susann@loopline-systems.com"</span></span>,
+      "<span class="hljs-attribute">firstname</span>": <span class="hljs-value"><span class="hljs-string">"Susann"</span></span>,
+      "<span class="hljs-attribute">lastname</span>": <span class="hljs-value"><span class="hljs-string">"Riley"</span></span>,
+      "<span class="hljs-attribute">image</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
+        "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"cee9262a8929dfe7584a98548f70f948.jpeg"</span></span>,
+        "<span class="hljs-attribute">webPath</span>": <span class="hljs-value"><span class="hljs-string">"http://static.helen.dev/tal-lon-cdn/cee9262a8929dfe7584a98548f70f948.jpeg"</span></span>,
+        "<span class="hljs-attribute">size</span>": <span class="hljs-value"><span class="hljs-number">13795</span></span>,
+        "<span class="hljs-attribute">mimeType</span>": <span class="hljs-value"><span class="hljs-string">"image/jpeg"</span></span>,
+        "<span class="hljs-attribute">createdAt</span>": <span class="hljs-value"><span class="hljs-string">"2015-06-18T08:28:10+0000"</span></span>,
+        "<span class="hljs-attribute">originalName</span>": <span class="hljs-value"><span class="hljs-string">"Susann"</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"susann@loopline-systems.com"</span></span>,
+      "<span class="hljs-attribute">position</span>": <span class="hljs-value"><span class="hljs-string">"CEO"</span></span>,
+      "<span class="hljs-attribute">active</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+      "<span class="hljs-attribute">createdAt</span>": <span class="hljs-value"><span class="hljs-string">"2015-06-18T08:26:09+0000"</span></span>,
+      "<span class="hljs-attribute">activatedAt</span>": <span class="hljs-value"><span class="hljs-string">"18-06-2015"</span></span>,
+      "<span class="hljs-attribute">deactivatedAt</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">lastPasswordResetByAdmin</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">size</span>": <span class="hljs-value"><span class="hljs-number">1</span>
+  </span>}
+]
+</code></pre><div class="description"><p>Returned when successful</p>
+</div></li><li data-toggle="collapse" data-target="#c46c932af1b658c0486e01ab82d6126b" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>401</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="c46c932af1b658c0486e01ab82d6126b" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when not authorized</p>
+</div></li></ul></div></section><section id="team-team-list-post" class="panel panel-success"><div data-toggle="collapse" data-target="#team-team-list-post .content-group" class="panel-heading"><div style="float:right"><span>Create a new team</span></div><div style="float:left"><a href="#page:team,header:team-team-list-post" class="btn btn-xs btn-success">POST</a></div><div style="overflow:hidden"><code>/teams</code></div></div><div class="panel content-group collapse"><div class="panel-body"><p>Create a new team</p>
+</div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>name</dt><dd><code>string (\w+)</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>The name of the team</p>
+</dd></dl></li></ul><ul class="list-group"><li data-toggle="collapse" data-target="#e7c0ea32a15d875cf7130eacdf7e5a47" role="requestTrigger" class="list-group-item collapsed"><strong>Request</strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="e7c0ea32a15d875cf7130eacdf7e5a47" role="request" class="list-group-item panel-collapse collapse"><h5>Headers</h5><pre><code><span class="hljs-attribute">X-Api-Client</span>: <span class="hljs-string">&lt;CLIENT_ID&gt;</span><br/><span class="hljs-attribute">X-Api-Key</span>: <span class="hljs-string">&lt;API_KEY&gt;</span><br/><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br/></code></pre><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Loopline Systems Team"</span>
+</span>}
+</code></pre><div class="description"><p>Example:</p>
+<pre><code class="language-bash">curl https://&lt;your_loopline_systems_domain&gt;/teams -X POST \
+-H <span class="hljs-string">"X-Api-Client: &lt;CLIENT_ID&gt;"</span> \
+-H <span class="hljs-string">"X-Api-Key: &lt;API_KEY&gt;"</span> \
+-H <span class="hljs-string">"Content-Type: application/json"</span> \
+<span class="hljs-operator">-d</span> <span class="hljs-string">'{
+"name": "Loopline Systems Team"
+}'</span>
+</code></pre>
+</div></li><li data-toggle="collapse" data-target="#ebc999991ac8bd4055630fd89ad1ce17" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>201</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="ebc999991ac8bd4055630fd89ad1ce17" role="response" class="list-group-item panel-collapse collapse"><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">9</span></span>,
+  "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Loopline Systems Team"</span></span>,
+  "<span class="hljs-attribute">teamlead</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+    "<span class="hljs-attribute">username</span>": <span class="hljs-value"><span class="hljs-string">"susann@loopline-systems.com"</span></span>,
+    "<span class="hljs-attribute">firstname</span>": <span class="hljs-value"><span class="hljs-string">"Susann"</span></span>,
+    "<span class="hljs-attribute">lastname</span>": <span class="hljs-value"><span class="hljs-string">"Riley"</span></span>,
+    "<span class="hljs-attribute">image</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">webPath</span>": <span class="hljs-value"><span class="hljs-string">"https://ec3660afbaec0812cdb5-83af784216914eb78a3907e564e823b0.ssl.cf3.rackcdn.com/default_user.png"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"susann@loopline-systems.com"</span></span>,
+    "<span class="hljs-attribute">position</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+  </span>}</span>,
+  "<span class="hljs-attribute">size</span>": <span class="hljs-value"><span class="hljs-number">1</span>
+</span>}
+</code></pre><div class="description"><p>Returned when created</p>
+</div></li><li data-toggle="collapse" data-target="#8a42085fa06ad34f65c3ed9eb9cc6fe9" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>400</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="8a42085fa06ad34f65c3ed9eb9cc6fe9" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when the request content is malformed, e.g. name is missing</p>
+</div></li><li data-toggle="collapse" data-target="#dde1ad556cee789646c322b1c1b4140e" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>401</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="dde1ad556cee789646c322b1c1b4140e" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when not authorized</p>
+</div></li><li data-toggle="collapse" data-target="#5dbcd0a0c27d4193d832978266970c86" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>404</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="5dbcd0a0c27d4193d832978266970c86" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when not found</p>
+</div></li><li data-toggle="collapse" data-target="#82e072b5c9e6ec9f8537462cafaa6c37" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>409</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="82e072b5c9e6ec9f8537462cafaa6c37" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when team name already taken</p>
+</div></li></ul></div></section><h4 id="team-team">Team&nbsp;<a href="#page:team,header:team-team"><i class="fa fa-link"></i></a></h4><section id="team-team-get" class="panel panel-info"><div data-toggle="collapse" data-target="#team-team-get .content-group" class="panel-heading"><div style="float:right"><span>Get a single team</span></div><div style="float:left"><a href="#page:team,header:team-team-get" class="btn btn-xs btn-primary">GET</a></div><div style="overflow:hidden"><code>/teams/{id}</code></div></div><div class="panel content-group collapse"><div class="panel-body"><p>Get a single team</p>
+</div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>id</dt><dd><code>integer (\d+)</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>The id of the team</p>
+</dd><dt>members</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-info default"><strong>Default:&nbsp;</strong><span>false</span></span>&nbsp;<p>Add Members to response</p>
+</dd></dl></li></ul><ul class="list-group"><li data-toggle="collapse" data-target="#40dcd75ec8842661944b26a39f91cd25" role="requestTrigger" class="list-group-item collapsed"><strong>Request</strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="40dcd75ec8842661944b26a39f91cd25" role="request" class="list-group-item panel-collapse collapse"><h5>Headers</h5><pre><code><span class="hljs-attribute">X-Api-Client</span>: <span class="hljs-string">&lt;CLIENT_ID&gt;</span><br/><span class="hljs-attribute">X-Api-Key</span>: <span class="hljs-string">&lt;API_KEY&gt;</span><br/></code></pre><div class="description"><p>Example:</p>
+<pre><code class="language-bash">curl https://&lt;your_loopline_systems_domain&gt;/teams/&lt;id&gt; -X GET \
+-H <span class="hljs-string">"X-Api-Client: &lt;CLIENT_ID&gt;"</span> \
+-H <span class="hljs-string">"X-Api-Key: &lt;API_KEY&gt;"</span>
+</code></pre>
+</div></li><li data-toggle="collapse" data-target="#d0fe48815e18f7b032fea5eaa7bf2c88" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="d0fe48815e18f7b032fea5eaa7bf2c88" role="response" class="list-group-item panel-collapse collapse"><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">12</span></span>,
+  "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Loopline Systems Team"</span></span>,
+  "<span class="hljs-attribute">documents</span>": <span class="hljs-value">[
+
+  ]</span>,
+  "<span class="hljs-attribute">isLead</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+  "<span class="hljs-attribute">teamlead</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+    "<span class="hljs-attribute">username</span>": <span class="hljs-value"><span class="hljs-string">"demo+admin@loopline-systems.com"</span></span>,
+    "<span class="hljs-attribute">firstname</span>": <span class="hljs-value"><span class="hljs-string">"The"</span></span>,
+    "<span class="hljs-attribute">lastname</span>": <span class="hljs-value"><span class="hljs-string">"Admin"</span></span>,
+    "<span class="hljs-attribute">image</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">webPath</span>": <span class="hljs-value"><span class="hljs-string">"https://ec3660afbaec0812cdb5-83af784216914eb78a3907e564e823b0.ssl.cf3.rackcdn.com/default_user.png"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"demo+admin@loopline-systems.com"</span></span>,
+    "<span class="hljs-attribute">position</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">active</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+    "<span class="hljs-attribute">createdAt</span>": <span class="hljs-value"><span class="hljs-string">"2015-06-18T08:25:59+0000"</span></span>,
+    "<span class="hljs-attribute">activatedAt</span>": <span class="hljs-value"><span class="hljs-string">"18-06-2015"</span></span>,
+    "<span class="hljs-attribute">deactivatedAt</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">lastPasswordResetByAdmin</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+  </span>}</span>,
+  "<span class="hljs-attribute">size</span>": <span class="hljs-value"><span class="hljs-number">1</span>
+</span>}
+</code></pre><div class="description"><p>Returned when successful</p>
+</div></li><li data-toggle="collapse" data-target="#ad8c662bd9683fc35f4778fdbdf6b5cf" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>401</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="ad8c662bd9683fc35f4778fdbdf6b5cf" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when not authorized</p>
+</div></li><li data-toggle="collapse" data-target="#ccc1773d8ee759d1cf512cefee6c3454" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>404</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="ccc1773d8ee759d1cf512cefee6c3454" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when team not found</p>
+</div></li></ul></div></section><section id="team-team-patch" class="panel panel-warning"><div data-toggle="collapse" data-target="#team-team-patch .content-group" class="panel-heading"><div style="float:right"><span>Update a single team</span></div><div style="float:left"><a href="#page:team,header:team-team-patch" class="btn btn-xs btn-warning">PATCH</a></div><div style="overflow:hidden"><code>/teams/{id}</code></div></div><div class="panel content-group collapse"><div class="panel-body"><p>Update a single team</p>
+</div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>id</dt><dd><code>integer (\d+)</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>The id of the team</p>
+</dd><dt>name</dt><dd><code>string (\w+)</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>The new name of the team</p>
+</dd></dl></li></ul><ul class="list-group"><li data-toggle="collapse" data-target="#4b93622b0f60f0764a76f2478eca2c18" role="requestTrigger" class="list-group-item collapsed"><strong>Request</strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="4b93622b0f60f0764a76f2478eca2c18" role="request" class="list-group-item panel-collapse collapse"><h5>Headers</h5><pre><code><span class="hljs-attribute">X-Api-Client</span>: <span class="hljs-string">&lt;CLIENT_ID&gt;</span><br/><span class="hljs-attribute">X-Api-Key</span>: <span class="hljs-string">&lt;API_KEY&gt;</span><br/><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br/></code></pre><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"HR"</span>
+</span>}
+</code></pre><div class="description"><p>Example:</p>
+<pre><code class="language-bash">curl https://&lt;your_loopline_systems_domain&gt;/teams/&lt;id&gt; -X PATCH \
+-H <span class="hljs-string">"X-Api-Client: &lt;CLIENT_ID&gt;"</span> \
+-H <span class="hljs-string">"X-Api-Key: &lt;API_KEY&gt;"</span> \
+-H <span class="hljs-string">"Content-Type: application/json"</span> \
+<span class="hljs-operator">-d</span> <span class="hljs-string">'{
+"name": "HR"
+}'</span>
+</code></pre>
+</div></li><li data-toggle="collapse" data-target="#d3c4ad8177e7de55a8e38cc1c5b66654" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="d3c4ad8177e7de55a8e38cc1c5b66654" role="response" class="list-group-item panel-collapse collapse"><h5>Body</h5><pre><code>{
+  <span class="hljs-string">"id"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-string">"name"</span>: <span class="hljs-string">"HR"</span>,
+  <span class="hljs-string">"users"</span>: [
+    {
+      <span class="hljs-string">"id"</span>: <span class="hljs-number">2</span>,
+      <span class="hljs-string">"username"</span>: <span class="hljs-string">"susann@loopline-systems.com,
+      "</span>firstname<span class="hljs-string">": "</span>Susann<span class="hljs-string">",
+      "</span>lastname<span class="hljs-string">": "</span>Riley<span class="hljs-string">",
+      "</span>image<span class="hljs-string">": {
+        "</span>id<span class="hljs-string">": 2,
+        "</span>name<span class="hljs-string">": "</span><span class="hljs-string">",
+        "w</span>ebPath<span class="hljs-string">": "</span>http:<span class="hljs-comment">//static.helen.dev/tal-lon-cdn/"</span>
+      },
+      <span class="hljs-string">"email"</span>: <span class="hljs-string">"susann@loopline-systems.com"</span>,
+      <span class="hljs-string">"position"</span>: <span class="hljs-string">"CEO"</span>,
+      <span class="hljs-string">"active"</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-string">"activatedAt"</span>: <span class="hljs-string">"08-06-2015"</span>,
+      <span class="hljs-string">"deactivatedAt"</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-string">"lastPasswordResetByAdmin"</span>: <span class="hljs-literal">null</span>
+    },
+    {
+      <span class="hljs-string">"id"</span>: <span class="hljs-number">18</span>,
+      <span class="hljs-string">"username"</span>: <span class="hljs-string">"alex.millner@loopline-systems.com"</span>,
+      <span class="hljs-string">"firstname"</span>: <span class="hljs-string">"Alex"</span>,
+      <span class="hljs-string">"lastname"</span>: <span class="hljs-string">"Millner"</span>,
+      <span class="hljs-string">"image"</span>: {
+        <span class="hljs-string">"id"</span>: <span class="hljs-number">18</span>,
+        <span class="hljs-string">"name"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-string">"webPath"</span>: <span class="hljs-string">"http://static.helen.dev/tal-lon-cdn/"</span>
+      },
+      <span class="hljs-string">"email"</span>: <span class="hljs-string">"alex.millner@loopline-systems.com"</span>,
+      <span class="hljs-string">"position"</span>: <span class="hljs-string">"Customer Success Agent"</span>,
+      <span class="hljs-string">"active"</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-string">"activatedAt"</span>: <span class="hljs-string">"08-06-2015"</span>,
+      <span class="hljs-string">"deactivatedAt"</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-string">"lastPasswordResetByAdmin"</span>: <span class="hljs-literal">null</span>
+    }
+  ],
+  <span class="hljs-string">"isLead"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">"size"</span>: <span class="hljs-number">2</span>
+}
+</code></pre><div class="description"><p>Returned when team has been updated</p>
+</div></li><li data-toggle="collapse" data-target="#ffada73c7322b78684b28538c68ce4c8" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>400</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="ffada73c7322b78684b28538c68ce4c8" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when the request content is malformed</p>
+</div></li><li data-toggle="collapse" data-target="#2ba6abbe62a36041787d69a23dbf9d05" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>401</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="2ba6abbe62a36041787d69a23dbf9d05" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when not authorized</p>
+</div></li><li data-toggle="collapse" data-target="#acc48c66752b76ba209df94c0981c5a8" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>403</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="acc48c66752b76ba209df94c0981c5a8" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when forbidden</p>
+</div></li><li data-toggle="collapse" data-target="#56570b4443dacd6eb92768f8c7885920" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>404</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="56570b4443dacd6eb92768f8c7885920" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when not found</p>
+</div></li><li data-toggle="collapse" data-target="#504fa110eb3da7618fc15b2c5832e1a6" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>409</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="504fa110eb3da7618fc15b2c5832e1a6" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when team name already taken</p>
+</div></li></ul></div></section><section id="team-team-delete" class="panel panel-danger"><div data-toggle="collapse" data-target="#team-team-delete .content-group" class="panel-heading"><div style="float:right"><span>Delete a single team</span></div><div style="float:left"><a href="#page:team,header:team-team-delete" class="btn btn-xs btn-danger">DELETE</a></div><div style="overflow:hidden"><code>/teams/{id}</code></div></div><div class="panel content-group collapse"><div class="panel-body"><p>Delete a single team with all relations</p>
+</div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>id</dt><dd><code>integer (\d+)</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>The id of the team</p>
+</dd></dl></li></ul><ul class="list-group"><li data-toggle="collapse" data-target="#9c50732c13330e25807a02e2601821f1" role="requestTrigger" class="list-group-item collapsed"><strong>Request</strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="9c50732c13330e25807a02e2601821f1" role="request" class="list-group-item panel-collapse collapse"><h5>Headers</h5><pre><code><span class="hljs-attribute">X-Api-Client</span>: <span class="hljs-string">&lt;CLIENT_ID&gt;</span><br/><span class="hljs-attribute">X-Api-Key</span>: <span class="hljs-string">&lt;API_KEY&gt;</span><br/></code></pre><div class="description"><p>Example:</p>
+<pre><code class="language-bash">curl https://&lt;your_loopline_systems_domain&gt;/teams/&lt;id&gt; -X DELETE \
+-H <span class="hljs-string">"X-Api-Client: &lt;CLIENT_ID&gt;"</span> \
+-H <span class="hljs-string">"X-Api-Key: &lt;API_KEY&gt;"</span>
+</code></pre>
+</div></li><li data-toggle="collapse" data-target="#a80e0c11e3a247b177a3e8fccd583258" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>204</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="a80e0c11e3a247b177a3e8fccd583258" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when deleted</p>
+</div></li><li data-toggle="collapse" data-target="#ef7ebd0564cfc2879bf2756d511b04fa" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>401</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="ef7ebd0564cfc2879bf2756d511b04fa" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when not authorized</p>
+</div></li><li data-toggle="collapse" data-target="#bfae351a5dedfd7e66829e88a8e9f2bf" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>404</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="bfae351a5dedfd7e66829e88a8e9f2bf" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when team not exists</p>
+</div></li></ul></div></section><h4 id="team-teamlead">Teamlead&nbsp;<a href="#page:team,header:team-teamlead"><i class="fa fa-link"></i></a></h4><section id="team-teamlead-post" class="panel panel-success"><div data-toggle="collapse" data-target="#team-teamlead-post .content-group" class="panel-heading"><div style="float:right"><span>Set a new teamlead</span></div><div style="float:left"><a href="#page:team,header:team-teamlead-post" class="btn btn-xs btn-success">POST</a></div><div style="overflow:hidden"><code>/teams/{id}/teamlead/{teamlead_id}</code></div></div><div class="panel content-group collapse"><div class="panel-body"><p>Set a new teamlead</p>
+</div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>id</dt><dd><code>integer (\d+)</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>The id of the team</p>
+</dd><dt>teamlead_id</dt><dd><code>integer (\d+)</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>The id of the new teamlead</p>
+</dd></dl></li></ul><ul class="list-group"><li data-toggle="collapse" data-target="#ac3c306001bc44444f6b6d7eb2615f2c" role="requestTrigger" class="list-group-item collapsed"><strong>Request</strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="ac3c306001bc44444f6b6d7eb2615f2c" role="request" class="list-group-item panel-collapse collapse"><h5>Headers</h5><pre><code><span class="hljs-attribute">X-Api-Client</span>: <span class="hljs-string">&lt;CLIENT_ID&gt;</span><br/><span class="hljs-attribute">X-Api-Key</span>: <span class="hljs-string">&lt;API_KEY&gt;</span><br/></code></pre><div class="description"><p>Example:</p>
+<pre><code class="language-bash">curl https://&lt;your_loopline_systems_domain&gt;/teams/&lt;id&gt;/teamlead/&lt;teamlead_id&gt; -X POST \
+-H <span class="hljs-string">"X-Api-Client: &lt;CLIENT_ID&gt;"</span> \
+-H <span class="hljs-string">"X-Api-Key: &lt;API_KEY&gt;"</span>
+</code></pre>
+</div></li><li data-toggle="collapse" data-target="#bd95e5be3995e4807ef71a8d0e96f411" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>201</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="bd95e5be3995e4807ef71a8d0e96f411" role="response" class="list-group-item panel-collapse collapse"><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">4</span></span>,
+  "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Finance"</span></span>,
+  "<span class="hljs-attribute">users</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
+      "<span class="hljs-attribute">username</span>": <span class="hljs-value"><span class="hljs-string">"susann@loopline-systems.com"</span></span>,
+      "<span class="hljs-attribute">firstname</span>": <span class="hljs-value"><span class="hljs-string">"Susann"</span></span>,
+      "<span class="hljs-attribute">lastname</span>": <span class="hljs-value"><span class="hljs-string">"Riley"</span></span>,
+      "<span class="hljs-attribute">image</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">40</span></span>,
+        "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"7566f0404037cede5bb3d742194d28c2.jpeg"</span></span>,
+        "<span class="hljs-attribute">webPath</span>": <span class="hljs-value"><span class="hljs-string">"http://static.helen.dev/tal-lon-cdn/7566f0404037cede5bb3d742194d28c2.jpeg"</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"susann@loopline-systems.com"</span></span>,
+      "<span class="hljs-attribute">position</span>": <span class="hljs-value"><span class="hljs-string">"CEO"</span></span>,
+      "<span class="hljs-attribute">active</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+      "<span class="hljs-attribute">activatedAt</span>": <span class="hljs-value"><span class="hljs-string">"18-06-2015"</span></span>,
+      "<span class="hljs-attribute">deactivatedAt</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">lastPasswordResetByAdmin</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+    </span>},
+  ]</span>,
+  "<span class="hljs-attribute">isLead</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+  "<span class="hljs-attribute">teamlead</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">3</span></span>,
+    "<span class="hljs-attribute">username</span>": <span class="hljs-value"><span class="hljs-string">"catrina@loopline-systems.com"</span></span>,
+    "<span class="hljs-attribute">firstname</span>": <span class="hljs-value"><span class="hljs-string">"Catrina"</span></span>,
+    "<span class="hljs-attribute">lastname</span>": <span class="hljs-value"><span class="hljs-string">"Carnahan"</span></span>,
+    "<span class="hljs-attribute">image</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">3</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"de9dad172881d37ad0db22e83a451b97.jpeg"</span></span>,
+      "<span class="hljs-attribute">webPath</span>": <span class="hljs-value"><span class="hljs-string">"http://static.helen.dev/tal-lon-cdn/de9dad172881d37ad0db22e83a451b97.jpeg"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"catrina@loopline-systems.com"</span></span>,
+    "<span class="hljs-attribute">position</span>": <span class="hljs-value"><span class="hljs-string">"CFO"</span></span>,
+    "<span class="hljs-attribute">active</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+    "<span class="hljs-attribute">activatedAt</span>": <span class="hljs-value"><span class="hljs-string">"18-06-2015"</span></span>,
+    "<span class="hljs-attribute">deactivatedAt</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">lastPasswordResetByAdmin</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+  </span>}</span>,
+  "<span class="hljs-attribute">size</span>": <span class="hljs-value"><span class="hljs-number">4</span>
+</span>}
+</code></pre><div class="description"><p>Returned when the new teamlead has been set successfully</p>
+</div></li><li data-toggle="collapse" data-target="#3450a8c5213ffc106e27244a9b06945b" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>400</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="3450a8c5213ffc106e27244a9b06945b" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when thew new teamlead could not be set</p>
+</div></li><li data-toggle="collapse" data-target="#30af4a1714a563f21bf45ccf062640bc" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>404</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="30af4a1714a563f21bf45ccf062640bc" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when thew new teamlead or team were not found</p>
+</div></li></ul></div></section><h4 id="team-team-membership">Team Membership&nbsp;<a href="#page:team,header:team-team-membership"><i class="fa fa-link"></i></a></h4><section id="team-team-membership-post" class="panel panel-success"><div data-toggle="collapse" data-target="#team-team-membership-post .content-group" class="panel-heading"><div style="float:right"><span>Add a user to a team</span></div><div style="float:left"><a href="#page:team,header:team-team-membership-post" class="btn btn-xs btn-success">POST</a></div><div style="overflow:hidden"><code>/teams/{id}/user/{user_id}</code></div></div><div class="panel content-group collapse"><div class="panel-body"><p>Add a user to a team</p>
+</div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>id</dt><dd><code>integer (\d+)</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>The id of the team</p>
+</dd><dt>user_id</dt><dd><code>integer (\d+)</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>The id of the user</p>
+</dd></dl></li></ul><ul class="list-group"><li data-toggle="collapse" data-target="#590a51922c0f1121c6c8da3bd49c14df" role="requestTrigger" class="list-group-item collapsed"><strong>Request</strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="590a51922c0f1121c6c8da3bd49c14df" role="request" class="list-group-item panel-collapse collapse"><h5>Headers</h5><pre><code><span class="hljs-attribute">X-Api-Client</span>: <span class="hljs-string">&lt;CLIENT_ID&gt;</span><br/><span class="hljs-attribute">X-Api-Key</span>: <span class="hljs-string">&lt;API_KEY&gt;</span><br/></code></pre><div class="description"><p>Example:</p>
+<pre><code class="language-bash">curl https://&lt;your_loopline_systems_domain&gt;/teams/&lt;id&gt;/user/&lt;user_id&gt; -X POST \
+-H <span class="hljs-string">"X-Api-Client: &lt;CLIENT_ID&gt;"</span> \
+-H <span class="hljs-string">"X-Api-Key: &lt;API_KEY&gt;"</span>
+</code></pre>
+</div></li><li data-toggle="collapse" data-target="#969dde3c34f3d8d6b193214bb18e11da" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>201</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="969dde3c34f3d8d6b193214bb18e11da" role="response" class="list-group-item panel-collapse collapse"><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
+  "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Strategy"</span></span>,
+  "<span class="hljs-attribute">isLead</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+  "<span class="hljs-attribute">teamlead</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
+    "<span class="hljs-attribute">username</span>": <span class="hljs-value"><span class="hljs-string">"susann@loopline-systems.com"</span></span>,
+    "<span class="hljs-attribute">firstname</span>": <span class="hljs-value"><span class="hljs-string">"Susann"</span></span>,
+    "<span class="hljs-attribute">lastname</span>": <span class="hljs-value"><span class="hljs-string">"Riley"</span></span>,
+    "<span class="hljs-attribute">image</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+      "<span class="hljs-attribute">webPath</span>": <span class="hljs-value"><span class="hljs-string">"http://static.helen.dev/tal-lon-cdn/"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"susann@loopline-systems.com"</span></span>,
+    "<span class="hljs-attribute">position</span>": <span class="hljs-value"><span class="hljs-string">"CEO"</span></span>,
+    "<span class="hljs-attribute">active</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+    "<span class="hljs-attribute">activatedAt</span>": <span class="hljs-value"><span class="hljs-string">"08-06-2015"</span></span>,
+    "<span class="hljs-attribute">deactivatedAt</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">lastPasswordResetByAdmin</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+  </span>}</span>,
+  "<span class="hljs-attribute">size</span>": <span class="hljs-value"><span class="hljs-number">2</span>
+</span>}
+</code></pre><div class="description"><p>Returned when created</p>
+</div></li><li data-toggle="collapse" data-target="#43a7564da3f8c343233b96774d309b4a" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>401</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="43a7564da3f8c343233b96774d309b4a" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when not authorized</p>
+</div></li><li data-toggle="collapse" data-target="#ab504f11c7bc4818afa10998e784ba99" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>404</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="ab504f11c7bc4818afa10998e784ba99" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when team not found</p>
+</div></li></ul></div></section><section id="team-team-membership-delete" class="panel panel-danger"><div data-toggle="collapse" data-target="#team-team-membership-delete .content-group" class="panel-heading"><div style="float:right"><span>Delete a user from a team</span></div><div style="float:left"><a href="#page:team,header:team-team-membership-delete" class="btn btn-xs btn-danger">DELETE</a></div><div style="overflow:hidden"><code>/teams/{id}/user/{user_id}</code></div></div><div class="panel content-group collapse"><div class="panel-body"><p>Delete a user from a team</p>
+</div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>id</dt><dd><code>integer (\d+)</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>The id of the team</p>
+</dd><dt>user_id</dt><dd><code>integer (\d+)</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>The id of the user</p>
+</dd></dl></li></ul><ul class="list-group"><li data-toggle="collapse" data-target="#90b60030eaf05e012cb8141bfa1a3876" role="requestTrigger" class="list-group-item collapsed"><strong>Request</strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="90b60030eaf05e012cb8141bfa1a3876" role="request" class="list-group-item panel-collapse collapse"><h5>Headers</h5><pre><code><span class="hljs-attribute">X-Api-Client</span>: <span class="hljs-string">&lt;CLIENT_ID&gt;</span><br/><span class="hljs-attribute">X-Api-Key</span>: <span class="hljs-string">&lt;API_KEY&gt;</span><br/></code></pre><div class="description"><p>Example:</p>
+<pre><code class="language-bash">curl https://&lt;your_loopline_systems_domain&gt;/teams/&lt;id&gt;/user/&lt;user_id&gt; -X DELETE \
+-H <span class="hljs-string">"X-Api-Client: &lt;CLIENT_ID&gt;"</span> \
+-H <span class="hljs-string">"X-Api-Key: &lt;API_KEY&gt;"</span>
+</code></pre>
+</div></li><li data-toggle="collapse" data-target="#22bcd8300f94138ea4ebdfc71c364e0a" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>204</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="22bcd8300f94138ea4ebdfc71c364e0a" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when deleted</p>
+</div></li><li data-toggle="collapse" data-target="#714236b6bc14b59bf595d0a9ec8d7047" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>401</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="714236b6bc14b59bf595d0a9ec8d7047" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when not authorized</p>
+</div></li><li data-toggle="collapse" data-target="#209797582bffc6971db6a2cf839b28cc" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>403</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="209797582bffc6971db6a2cf839b28cc" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when forbidden</p>
+</div></li><li data-toggle="collapse" data-target="#3c244e64845cac3193c2890cf558ca16" role="responseTrigger" class="list-group-item collapsed"><strong>Response&nbsp;&nbsp;<code>404</code></strong><a class="pull-right"><span class="closed">Show</span><span class="open">Hide</span></a></li><li id="3c244e64845cac3193c2890cf558ca16" role="response" class="list-group-item panel-collapse collapse"><div class="description"><p>Returned when team not exists</p>
+</div></li></ul></div></section></div></div><a href="#page:role" class="btn btn-default"><i class="fa fa-arrow-circle-left"></i> Previous</a><div class="clearfix"></div><hr/></div></div></div></div><p id="footer" style="text-align: center;" class="text-muted">Generated with&nbsp;<a href="https://apiblueprint.org/" target="_blank" class="aglio">API Blueprint</a>&nbsp;and&nbsp;<a href="https://github.com/danielgtaylor/aglio" target="_blank" class="aglio">Aglio</a>&nbsp;and&nbsp;<a href="https://www.loopline-systems.com" target="_blank" class="aglio">© 2015 made with <span no-class="❤" class="heart">❤︎</span> in berlin</a></p></body><script src="//code.jquery.com/jquery-1.11.0.min.js"></script><script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script><script src="js/api-doc.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/knockout/3.0.0/knockout-min.js"></script><script>(function() {
+  var App;
+
+  App = (function() {
+    function App() {
+      this.page = ko.observable('home');
+    }
+
+    return App;
+
+  })();
+
+  window.app = new App();
+
+  window.onhashchange = function() {
+    var i, len, parts, ref, v, vars;
+    vars = {};
+    ref = location.hash.substr(1).split(',');
+    for (i = 0, len = ref.length; i < len; i++) {
+      v = ref[i];
+      parts = v.split(':');
+      vars[parts[0]] = parts[1];
+    }
+    window.app.page(vars.page || 'home');
+    if (vars.header) {
+      return $("#" + vars.header)[0].scrollIntoView(true);
+    } else {
+      return window.scrollTo(0, 0);
+    }
+  };
+
+  ko.applyBindings(window.app);
+
+  window.onhashchange();
+
+}).call(this);
+</script></html>

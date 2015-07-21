@@ -1,0 +1,18 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Loopline Systems API</title><link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"><link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"><link rel="stylesheet" href="css/styles.css"></head><body><a href="#top" class="text-muted back-to-top"><i class="fa fa-toggle-up"></i>&nbsp;Back to top</a><div class="container"><div class="row"><div class="col-md-3"><nav id="nav" class="hidden-sm hidden-xs affix nav"><a href="index.html"><img src="img/lls-logo.png" class="logo"></a><div id="static-pages" class="list-group"><a href="index.html" class="list-group-item heading">Loopline Systems API</a><a href="chrome_postman.html" class="list-group-item">Sandboxing with Postman</a><a href="index.html" class="list-group-item">REST API</a></div></nav></div><div id="content" class="col-md-8"><div><header><div class="page-header"><h1 id="top">Loopline Systems API</h1></div></header></div><h2>Sandboxing with Postman</h2>
+
+<p>Postman is an extension for Chrome which makes it easy to create and send HTTP requests to a server. You can modify the HTTP method, headers and parameters.</p>
+
+<p>First, install the Postman extension from the <a href="https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop">Chrome Webstore</a>.</p>
+
+<p>Now, you can download the postman collection from <a href="res/loopline-systems.postman_collection">here</a> and import it to Postman. Because the collection uses placeholders
+you need to create an environment with three values:</p>
+
+<p><img alt="Environment fields" src="img/chrome-postman-environment.jpeg"/></p>
+
+<ul><li>host: specifies the server including the protocol the requests shall go to.</li><li>api_client: identifies your client</li><li>api_key: authenticates your client.</li></ul>
+
+<p>If you set up the values correctly, you should have access to the provided actions.</p></div></div></div><p id="footer" style="text-align: center;" class="text-muted">Generated with&nbsp;<a href="https://apiblueprint.org/" target="_blank" class="aglio">API Blueprint</a>&nbsp;and&nbsp;<a href="https://github.com/danielgtaylor/aglio" target="_blank" class="aglio">Aglio</a>&nbsp;and&nbsp;<a href="https://www.loopline-systems.com" target="_blank" class="aglio">© 2015 made with <span no-class="❤" class="heart">❤︎</span> in berlin</a></p></body><script src="//code.jquery.com/jquery-1.11.0.min.js"></script><script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script><script src="js/api-doc.js"></script><script>(function() {
+  $('table').addClass('table');
+
+}).call(this);
+</script></html>

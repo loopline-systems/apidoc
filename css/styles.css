@@ -1,0 +1,315 @@
+/* Highlight.js Theme Tomorrow */
+
+.hljs-comment,
+.hljs-title {
+    color: #8e908c
+}
+
+.hljs-variable,
+.hljs-attribute,
+.hljs-tag,
+.hljs-regexp,
+.ruby .hljs-constant,
+.xml .hljs-tag .hljs-title,
+.xml .hljs-pi,
+.xml .hljs-doctype,
+.html .hljs-doctype,
+.css .hljs-id,
+.css .hljs-class,
+.css .hljs-pseudo {
+    color: #c82829
+}
+
+.hljs-number,
+.hljs-preprocessor,
+.hljs-pragma,
+.hljs-built_in,
+.hljs-literal,
+.hljs-params,
+.hljs-constant {
+    color: #f5871f
+}
+
+.ruby .hljs-class .hljs-title,
+.css .hljs-rules .hljs-attribute {
+    color: #eab700
+}
+
+.hljs-string,
+.hljs-value,
+.hljs-inheritance,
+.hljs-header,
+.ruby .hljs-symbol,
+.xml .hljs-cdata {
+    color: #718c00
+}
+
+.css .hljs-hexcolor {
+    color: #3e999f
+}
+
+.hljs-function,
+.python .hljs-decorator,
+.python .hljs-title,
+.ruby .hljs-function .hljs-title,
+.ruby .hljs-title .hljs-keyword,
+.perl .hljs-sub,
+.javascript .hljs-title,
+.coffeescript .hljs-title {
+    color: #4271ae
+}
+
+.hljs-keyword,
+.javascript .hljs-function {
+    color: #8959a8
+}
+
+.hljs {
+    display: block;
+    background: white;
+    color: #4d4d4c;
+    padding: .5em
+}
+
+.coffeescript .javascript,
+.javascript .xml,
+.tex .hljs-formula,
+.xml .javascript,
+.xml .vbscript,
+.xml .css,
+.xml .hljs-cdata {
+    opacity: .5
+}
+</style>
+  <style>
+  body,
+  h4,
+  h5 {
+      font-family: 'Roboto' sans-serif !important;
+  }
+
+h1,
+h2,
+h3,
+.aglio {
+    font-family: 'Raleway' sans-serif !important;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a {
+    display: none;
+}
+
+h1:hover a,
+h2:hover a,
+h3:hover a,
+h4:hover a,
+h5:hover a {
+    display: inline;
+}
+
+code {
+    color: #444;
+    background-color: #ddd;
+    font-family: 'Inconsolata' monospace !important;
+}
+
+a[data-target] {
+    cursor: pointer;
+}
+
+h4 {
+    font-size: 100%;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.back-to-top {
+    position: fixed;
+    z-index: 1;
+    bottom: 0px;
+    right: 24px;
+    padding: 4px 8px;
+    background-color: #eee;
+    text-decoration: none !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.panel {
+    overflow: hidden;
+}
+
+.panel-heading code {
+    margin-left: 3px;
+    color: #c7254e;
+    background-color: rgba(255, 255, 255, 0.7);
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
+
+.panel-heading h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+a.list-group-item:hover {
+    background-color: #f8f8f8;
+    border-left: 2px solid #18829C;
+    padding-left: 15px;
+}
+
+.indent {
+    padding-left: 16px;
+    display: block;
+}
+
+.list-group-item {
+    padding-left: 16px;
+}
+
+.list-group-item .toggle .open {
+    display: block;
+}
+
+.list-group-item .toggle .closed {
+    display: none;
+}
+
+.list-group-item.collapsed .toggle .open {
+    display: none;
+}
+
+.list-group-item.collapsed .toggle .closed {
+    display: block;
+}
+
+a.list-group-item {
+    font-size: 13px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+a.list-group-item.heading {
+    font-size: 15px;
+    color: #ffffff;
+    background-color: #18829C;
+}
+
+.list-group-item.collapse {
+    display: none;
+}
+
+.list-group-item.collapse.in {
+    display: block;
+}
+
+.list-group-item a span.closed {
+    display: none;
+}
+
+.list-group-item a span.open {
+    display: block;
+}
+
+.list-group-item.collapsed a span.closed {
+    display: block;
+}
+
+.list-group-item.collapsed a span.open {
+    display: none;
+}
+
+#nav {
+    width: inherit;
+    margin-top: 38px;
+    max-width: 255px;
+    top: 0;
+    bottom: 0;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    overflow-y: auto;
+}
+
+@media (max-width: 1199px) {
+    #nav {
+        max-width: 212px;
+    }
+}
+
+/** Loopline Systems Custom **/
+
+.logo {
+    margin-bottom: 20px;
+}
+
+a {
+    color: #18829c;
+}
+
+.action .parameters {
+    border-bottom: none;
+}
+
+.action .content-group {
+    margin-bottom: 0;
+    border: none;
+}
+
+.description pre {
+    word-break: normal;
+}
+
+[data-toggle="collapse"] {
+    cursor: pointer;
+}
+
+.list-group-item>.badge {
+    margin-left: 7px;
+}
+
+a.list-group-item.resource {
+    font-weight: bold;
+}
+
+#content img {
+    padding: 5px;
+    border: 1px solid #CCCCCC;
+}
+#footer a {
+    text-decoration: none;
+}
+#footer .heart {
+    transition: color .22s ease-in-out;
+    cursor: none;
+    font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif;
+}
+#footer .heart:hover {
+    color: #FF4136;
+    -webkit-animation: heartbeat 1.2s infinite;
+    animation: heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat {
+    30%, 70% {
+        transform: scale( .95 );
+    }
+
+    50% {
+        transform: scale( .9 );
+    }
+
+    45%,
+    55% {
+        transform: scale( .8 );
+    }
+}
