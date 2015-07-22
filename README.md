@@ -1,4 +1,4 @@
-Loopline Systems API Documenation
+# Loopline Systems API Documenation
 
 Welcome to the [Loopline Systems](http://www.loopline-systems.com) REST API specification.
 
