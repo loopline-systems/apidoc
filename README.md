@@ -8,13 +8,13 @@ Your opinion is important! If you have any suggestions how we can improve our AP
 
 ### Usage
 
-For using the API, you need a &lt;CLIENT_ID&gt; and an &lt;API-KEY&gt; which you can receive both in your admin section.
+For using the API, you need a &lt;CLIENT_ID&gt; and an &lt;API_KEY&gt; which you can receive both in your admin section.
 
 All data sent and received uses the MIME_TYPE `application/json`.
 
 API Base URL: `https://api.loopline-systems.com`
 
-Example cURL request: `curl https://api.loopline-systems.com/users -X GET -H "X-Api-Client: <CLIENT_ID>" -H "X-Api-Key: <API_KEY>"`
+Example cURL request: `curl https://api.loopline-systems.com/users -X GET -H "X-Loopline-Client: <CLIENT_ID>" -H "X-Api-Key: <API_KEY>"`
 
 ! Each Endpoint description will contain Sample Requests and Reponses as well.
 
