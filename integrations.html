@@ -1,0 +1,58 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Loopline Systems API</title><link rel="stylesheet" href="css/bootstrap-3.1.1.min.css"><link rel="stylesheet" href="css/font-awesome-4.0.3.min.css"><link rel="stylesheet" href="css/styles.css"><link rel="shortcut icon" href="http://cdn.loopline-systems.com/favicon.ico"><link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://cdn.loopline-systems.com/lls-logo-144.png"></head><body><a href="#top" class="text-muted back-to-top"><i class="fa fa-toggle-up"></i>&nbsp;Back to top</a><div class="container"><div class="row"><div class="col-md-3"><nav class="static"><a href="index.html"><img src="img/lls-logo.png" class="logo"></a><div id="static-pages" class="list-group"><a href="index.html" class="list-group-item heading">Loopline Systems API</a><a href="chrome_postman.html" class="list-group-item">Sandboxing with Postman</a><a href="error_responses.html" class="list-group-item">Error Responses</a><a href="integrations.html" class="list-group-item">Integrations</a><a href="index.html" class="list-group-item">REST API</a></div></nav><nav id="nav" class="hidden-sm hidden-xs affix nav dynamic"></nav></div><div id="content" class="col-md-8"><div><header><div class="page-header"><h1 id="top">Loopline Systems API Documentation</h1></div></header></div><h1>Integrations</h1>
+
+<p>Loopline provides the following integrations to synchronize users from other software.</p>
+
+<h2>BambooHr Integration</h2>
+
+<p><img alt="Loopline-BambooHR Integration" src="img/bamboohr-logo.jpg"/></p>
+
+<p>For a complete guide to BambooHR Integration please visit this page: <a href="http://www.loopline-systems.com/en/integrations/bamboohr">Setting up integration with BambooHR</a></p>
+
+<h2>Atoss Integration</h2>
+
+<p><img alt="Loopline-Atoss Integration" src="img/atoss-logo.jpg"/></p>
+
+<p>Atoss integrations works by importing the users list from a CSV file exported by Atoss, via a FTP connection.</p>
+
+<h3>This is how it works:</h3>
+
+<pre><code>1. Export users from Atoss into a CSV file.
+2. Put the file on a FTP server.
+3. Setup Atoss integration in Loopline.</code></pre>
+
+<p>Note: If the creation of the CSV file gets automated, Loopline can also run automatic import every 2 hours.</p>
+
+<p>The format of the CSV file is described in the following section: CSV Upload.</p>
+
+<h3>Configure FTP connection:</h3>
+
+<p><img alt="Loopline-Atoss Integration" src="img/atoss-config.png"/></p>
+
+<h2>CSV Upload</h2>
+
+<p><img alt="Loopline-CSV Integration" src="img/csv-logo.jpg"/></p>
+
+<p>You can import your users via uploading a <code>.csv</code> (comma spearated) file.
+The format of the CSV file should be as follow:</p>
+
+<p><code>user id, first name, last name, email, position, supervisor, department, deactivated</code></p>
+
+<ul><li>User Identity / Id (required): Give each user a unique identifer such as their ID Number or email address</li><li>First Name (required)</li><li>Last Name  (required)</li><li>Email Address (required)</li><li>Position (optional)</li><li>Supervisor Reference (optional): This can be the User ID or Email Address of the supervisor</li><li>Department Name (optional): This field is not currently imported but it will be supported in future.</li><li>Deactivated (optional): If this is set to either of Yes/True/1 the user will be deactivated</li></ul>
+
+<h3>Sample:</h3>
+
+<ul><li>&quot;123-abc“,&quot;Christian“,&quot;Kaller&quot;,&quot;christian.kaller@loopline-systems.com“,“Managing Director&quot;,&quot;&quot;, &quot;Management“, &quot;false&quot;</li><li>&quot;456-xyz&quot;,&quot;Marco&quot;,&quot;Roßdeutscher&quot;,&quot;marco.rossdeutscher@loopline-systems.com&quot;,&quot;CTO&quot;,&quot;christian.kaller@loopline-systems.com&quot;</li><li>&quot;789-lmn&quot;,&quot;Amir&quot;,&quot;Rahimi&quot;,&quot;amir.rahimi@loopline-systems.com&quot;,&quot;Developer&quot;,&quot;456-xyz&quot;, &quot;IT&quot;, &quot;true&quot;</li></ul>
+
+<p>In the sample above:</p>
+
+<ul><li>First line indicates a person with no supervisor.</li><li>Second line has a supervisor referenced by email address. It ommits all the optional columns which is fine.</li><li>Third line has a supervisor referenced by user id. This user is deactivated.</li></ul>
+
+<h3>Options:</h3>
+
+<p>It is possible to set CSV parsing parameters in the <code>config</code> section:</p>
+
+<ul><li>Delimiter: Default delimiter character is <code>,</code> (comma) - (one character only)</li><li>Enclosure: Default encolsure character is <code>&quot;</code> (double quotes) - (one character only)</li><li>Escape: Default escape character is <code>\</code> (backslash) - (one character only)</li><li>Ignore Lines: Number of lines to ignore from the begining of the file. Useful to skip header rows. Default is zero.</li></ul><hr /></div></div></div><p id="footer" style="text-align: center;" class="text-muted">Generated with&nbsp;<a href="https://apiblueprint.org/" target="_blank" class="aglio">API Blueprint</a>&nbsp;and&nbsp;<a href="https://github.com/danielgtaylor/aglio" target="_blank" class="aglio">Aglio</a>&nbsp;and&nbsp;<a href="http://www.loopline-systems.com" target="_blank" class="aglio">© 2016 made with <span no-class="❤" class="heart">❤︎</span> in berlin</a></p></body><script src="js/jquery-1.11.0.min.js"></script><script src="js/bootstrap-3.1.1.min.js"></script><script src="js/api-doc.js"></script><script>(function() {
+  $('table').addClass('table');
+
+}).call(this);
+</script></html>
