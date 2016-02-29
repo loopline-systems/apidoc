@@ -8,6 +8,37 @@
 
 <p>For a complete guide to BambooHR Integration please visit this page: <a href="http://www.loopline-systems.com/en/integrations/bamboohr">Setting up integration with BambooHR</a></p>
 
+<h2>Microsoft Azure Active Directory Integration</h2>
+
+<p><img alt="Loopline-Atoss Integration" src="img/azure-logo.png"/></p>
+
+<ol><li>Sign in to the Azure portal.</li><li>Select Active Directory service.</li><li>Select your desired directory.</li><li>Go to the APPLICATIONS tab.</li><li>Add a new application and select &quot;Add an application my organization is developing&quot; when prompted.</li><li>Set the name &quot;Loopline Systems&quot;, and select the type &quot;WEB APPLICATION AND/OR WEB APIWeb application and/or web API&quot;.</li><li>Put &quot;http://loopline-systems.com&quot; as both &quot;SIGN-ON URL&quot; and &quot;APP ID URI&quot;.</li><li>Inside the created application, go to &quot;CONFIGURE&quot;.</li><li>Copy the &quot;Cleint ID&quot; of the app and use it as &quot;Client ID&quot; integration parameter.</li><li>Generate a new key, and use the key as &quot;Client Secret&quot; integration parameter.</li><li>Give &quot;Read directory data&quot; permissions to this application.</li><li>You can use your Azure domain (*.onmicrosoft.com) as your &quot;Tenant ID&quot; or to see you actual Tenant ID click on 
+&quot;View Endpoints&quot; and use the GUID part of the URLs as your &quot;Tenant ID&quot;.</li></ol>
+
+<p>You may also follow this guide: <a href="https://azure.microsoft.com/en-us/documentation/articles/active-directory-integrating-applications/#adding-an-application">Integrating Applications with Azure Active Directory</a>,
+or <a href="https://msdn.microsoft.com/office/office365/HowTo/add-common-consent-manually#bk_RegisterServerApp">&quot;Register your web server app with the Azure Management Portal&quot;</a>. </p>
+
+<h2>Microsoft Office 365 Integration</h2>
+
+<p><img alt="Loopline-Atoss Integration" src="img/office365-logo.png"/></p>
+
+<p>You need an Azure subscription to access Office 365 Active Directory API.</p>
+
+<p>The setup is similar to Microsoft Azure Active Directory Integration via Azure portal, as described above.</p>
+
+<p>You may also follow the <a href="https://msdn.microsoft.com/office/office365/HowTo/add-common-consent-manually#bk_RegisterServerApp">&quot;Register your web server app with the Azure Management Portal&quot;</a> from this official guide 
+<a href="https://msdn.microsoft.com/en-us/office/office365/howto/add-common-consent-manually">Manually register your app with Azure AD so it can access Office 365 APIs</a>.</p>
+
+<h2>Microsoft Windows Active Directory (LDAP) Integration</h2>
+
+<p><img alt="Loopline-Active Directory (LDAP) Integration" src="img/activedirectory-logo.jpg"/></p>
+
+<h3>Parameters:</h3>
+
+<ol><li>Host: Host name or IP address of your Active Directory services server. 
+It is also possible to use a full LDAP URI of the form <code>ldap://hostname:port</code> or <code>ldaps://hostname:port</code> for SSL encryption. </li><li>Port: Default port is 389.</li><li>Username: Account name used to logon (RDN/Username/UserPrincipalName/SAM-Account-Name) </li><li>Password: Password used to logon.</li><li>Base DN: Base DN to fetch users from, For example: <code>DC=yourdomain,DC=com</code></li><li>Filter: It is possible to specify a filter to limit the objects that are fetched from the AD. The default filter is <code>(&amp;(objectCategory=person)(objectClass=user))</code>.
+See <a href="http://www.faqs.org/rfcs/rfc4515.html">RFC4515</a> for more information on LDAP filters.</li></ol>
+
 <h2>Atoss Integration</h2>
 
 <p><img alt="Loopline-Atoss Integration" src="img/atoss-logo.jpg"/></p>
