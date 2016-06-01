@@ -3,7 +3,7 @@ jQuery(function($) {
         var $navItem = $(this);
         var $target = $($navItem.attr('data-target')).find('.content-group');
         $navItem.click(function() {
-            $target.collapse('open');
+            $target.collapse('show');
         });
     });
 
